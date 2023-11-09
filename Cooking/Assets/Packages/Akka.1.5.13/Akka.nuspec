@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Akka</id>
+    <version>1.5.13</version>
+    <authors>Akka.NET Team</authors>
+    <licenseUrl>https://github.com/akkadotnet/akka.net/blob/master/LICENSE</licenseUrl>
+    <icon>akkalogo.png</icon>
+    <readme>README.md</readme>
+    <projectUrl>https://github.com/akkadotnet/akka.net</projectUrl>
+    <description>Canonical actor model implementation for .NET with local + distributed actors in C# and F#.</description>
+    <releaseNotes>Akka.NET v1.5.13 is a maintenance release with several bug fixes and also performance and QOL improvements.
+[Akka: Clean up and optimize actor name validation](https://github.com/akkadotnet/akka.net/pull/6919)
+[Akka: Wrap all scheduler Tell messages in `IScheduledMessage` envelope](https://github.com/akkadotnet/akka.net/pull/6461)
+[Akka: Fix possible NRE bug in `Dispatchers`](https://github.com/akkadotnet/akka.net/pull/6906)
+[Akka.Cluster.Sharding: Log shard coordinator remember entities timeout](https://github.com/akkadotnet/akka.net/pull/6885)
+[Akka.Cluster.Sharding: Fix shard coordinator throwing NullReferenceException](https://github.com/akkadotnet/akka.net/pull/6892)
+[Akka.Streams: Log errors inside SelectAsync stage](https://github.com/akkadotnet/akka.net/pull/6884)
+[Akka.Streams: Add supervisor strategy support for Throttle stage](https://github.com/akkadotnet/akka.net/pull/6886)
+[Akka: Change HashedWheelTimerScheduler implementation to use `PeriodicTimer` for net6.0+ builds](https://github.com/akkadotnet/akka.net/pull/6435)
+Package dependency upgrades
+[Bump Polyfill to 1.27.1](https://github.com/akkadotnet/akka.net/pull/6899)
+[Bump Microsoft.Data.SQLite to 7.0.11](https://github.com/akkadotnet/akka.net/pull/6917)
+[Bump Google.Protobuf tp 3.24.3](https://github.com/akkadotnet/akka.net/pull/6909)
+If you want to see the [full set of changes made in Akka.NET v1.5.13, click here](https://github.com/akkadotnet/akka.net/milestone/95?closed=1).
+| COMMITS | LOC+ | LOC- | AUTHOR              |
+|---------|------|------|---------------------|
+| 18      | 25   | 25   | dependabot[bot]     |
+| 6       | 435  | 200  | Gregorius Soedharmo |
+| 4       | 512  | 293  | Aaron Stannard      |
+| 2       | 3    | 7    | Simon Cropp         |
+| 1       | 7    | 0    | Sergey Popov        |
+| 1       | 66   | 17   | Ismael Hamed        |
+| 1       | 1    | 1    | HamzaAmjad-RG       |</releaseNotes>
+    <copyright>Copyright © 2013-2023 Akka.NET Team</copyright>
+    <tags>akka actors actor model Akka concurrency</tags>
+    <repository type="git" url="https://github.com/akkadotnet/akka.net" commit="51f0574081f857f155674fc3e81c58b4d09a9e1a" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.Extensions.ObjectPool" version="7.0.10" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Immutable" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Channels" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.Extensions.ObjectPool" version="7.0.10" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Collections.Immutable" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="6.0.1" exclude="Build,Analyzers" />
+        <dependency id="System.Reflection.Emit" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="System.Threading.Channels" version="5.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
