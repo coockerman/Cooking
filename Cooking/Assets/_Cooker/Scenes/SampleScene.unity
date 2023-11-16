@@ -595,26 +595,15 @@ MonoBehaviour:
   totalWaiter: 1
   chefPrefab: {fileID: 136911189}
   chefSupportPrefab: {fileID: 630259747}
-  FoodDay1:
-    dataFoods:
-    - {fileID: 11400000, guid: fe760e7fd448d4c4191d341e17f83b03, type: 2}
-    - {fileID: 11400000, guid: 0582b0746f334d349b24a540c73e72c9, type: 2}
-    - {fileID: 11400000, guid: 0c9ed6fd6772f2a4085d8a4d5eda6c3d, type: 2}
-  FoodDay2:
-    dataFoods:
-    - {fileID: 11400000, guid: 075bf424c30f1eb449bb5f90b76dec45, type: 2}
-    - {fileID: 11400000, guid: bbb17182c3fe0a249a5f3d30775ed74b, type: 2}
-  FoodDay3:
-    dataFoods:
-    - {fileID: 11400000, guid: 806d6c55d6e4ed449b74bd26bcdf4ff1, type: 2}
+  MenuRestaurant:
+  - {fileID: 11400000, guid: 3c366355ebc3e484797176694f5de937, type: 2}
+  - {fileID: 11400000, guid: 785bfb1e63f882647b2f8169c8869341, type: 2}
+  - {fileID: 11400000, guid: cc955feabbc841248a359533ba63558e, type: 2}
   typePrefabCustomer:
   - {fileID: 4585656896957485611, guid: 5e7dcf7127ec0ab46818c0b8f24fbee2, type: 3}
   - {fileID: 7096728530395728765, guid: 69aaa6f6362baed45bf0e8b6b92b9356, type: 3}
   - {fileID: 3336420145981876120, guid: c9a70a5faa822664bbb7acce4ef5854a, type: 3}
   - {fileID: 7072045329968098091, guid: 20c821083637e764fba1353cd0f8084a, type: 3}
-  Tables: []
-  door: {fileID: 286541865}
-  delayTime: 4
 --- !u!4 &455757131
 Transform:
   m_ObjectHideFlags: 0

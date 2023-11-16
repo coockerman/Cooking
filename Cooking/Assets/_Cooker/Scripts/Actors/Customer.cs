@@ -7,40 +7,11 @@ public class Customer : MonoBehaviour
 {
     Transform table;
     [SerializeField] float speedRun;
-    Food FoodOrder;
-    DinnerTable DinnerTable;
+
     private void Start()
     {
-        DinnerTable = FindObjectOfType<DinnerTable>();
-        FindTable();
     }
-    void FindTable()
-    {
-        Table table = DinnerTable.ChoseTable();
-        if(table != null )
-        {
-            Debug.Log("b");
-            this.table = table.gameObject.transform;
-            GotoTheTable();
-        }
-        else
-        {
-            GotoWait();
-        }
-        
-    }
-    void GotoTheTable()
-    {
-        if(table!=null)
-        {
-            StartCoroutine(MoveToTable());
-
-        }
-    }
-    void GotoWait()
-    {
-
-    }
+    
     IEnumerator MoveToTable()
     {
         
@@ -58,7 +29,6 @@ public class Customer : MonoBehaviour
         }
 
         transform.position = targetPosition;
-        Debug.Log("Đã đến bàn ăn!");
     }
     
 }

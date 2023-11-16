@@ -27,17 +27,10 @@ class ChefPrepareActor : ReceiveActor
         {
             switch (message)
             {
-                case Order orderFood:
-                    HandleOrderFood(orderFood);
-                    break;
+                
             }
         });
 
     }
-    void HandleOrderFood(Order orderFood)
-    {
-        var food = (Order)orderFood.Data;
-        var chefPrepare = (ChefPrepare)orderFood.MonoBehaviour;
-        Action<object> callBackAction = (menu) => chefPrepare.OnPrepare(food);
-    }
+    
 }

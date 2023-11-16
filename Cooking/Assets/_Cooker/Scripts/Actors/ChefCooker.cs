@@ -49,9 +49,7 @@ class ChefCookerActor : ReceiveActor
                 case StartJob actorAction:
                     HandleStartJob(actorAction);
                     break;
-                case Order orderFood:
-                    HandleOrderFood(orderFood);
-                    break;
+                
             }
         });
         
@@ -73,13 +71,6 @@ class ChefCookerActor : ReceiveActor
         Context.Self.Tell(new ProcessMaterial(menuByDay, callBackAction));
     }
     
-    void HandleOrderFood(Order orderFood)
-    {
-        var food = (Order)orderFood.Data;
-        var chefCooker = (ChefCooker)orderFood.MonoBehaviour;
-        Action<object> callBackAction = (menu) => chefCooker.OnCooking(food);
-        callBackAction.Invoke(chefCooker);
-    }
 
     private void ProcessMaterial(ProcessMaterial data)
     {

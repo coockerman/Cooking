@@ -12,11 +12,7 @@ public class DishWasher : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
 class DishWasherActor : ReceiveActor
 {
