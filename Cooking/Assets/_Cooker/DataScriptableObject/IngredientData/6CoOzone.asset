@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 6CoOzone
   m_EditorClassIdentifier: 
   nameIngredient: "C\u1ECF Ozone"
-  spriteIngredient: {fileID: 0}
+  spriteIngredient: {fileID: 21300000, guid: 9fb14854cc95bfb49b0eb7cb42ff1091, type: 3}

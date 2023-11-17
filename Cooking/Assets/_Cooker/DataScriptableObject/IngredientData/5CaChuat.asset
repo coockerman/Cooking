@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 5CaChuat
   m_EditorClassIdentifier: 
   nameIngredient: "C\xE0 chu\u1EADt"
-  spriteIngredient: {fileID: 21300000, guid: 3699cc5a9884f7942b5f4a473bd80da5, type: 3}
+  spriteIngredient: {fileID: 21300000, guid: 0abfca89818f1da4985b35554e002fcb, type: 3}

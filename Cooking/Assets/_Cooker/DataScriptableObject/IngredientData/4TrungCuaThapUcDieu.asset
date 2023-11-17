@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 4TrungCuaThapUcDieu
   m_EditorClassIdentifier: 
   nameIngredient: "Tr\u1EE9ng c\u1EE7a th\u1EADp \u1EE9c \u0111i\u1EC3u"
-  spriteIngredient: {fileID: 21300000, guid: 3699cc5a9884f7942b5f4a473bd80da5, type: 3}
+  spriteIngredient: {fileID: 21300000, guid: d57f307341629db4797c36c8794f0657, type: 3}

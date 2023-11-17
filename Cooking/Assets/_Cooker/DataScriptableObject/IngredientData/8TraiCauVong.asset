@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 8TraiCauVong
   m_EditorClassIdentifier: 
   nameIngredient: "Tr\xE1i c\u1EA7u v\u1ED3ng"
-  spriteIngredient: {fileID: 0}
+  spriteIngredient: {fileID: 21300000, guid: 747fd62db7571d74fb30157ac0649785, type: 3}

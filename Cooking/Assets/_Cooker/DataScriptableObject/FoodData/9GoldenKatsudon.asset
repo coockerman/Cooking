@@ -18,4 +18,4 @@ MonoBehaviour:
   ingredients:
   - {fileID: 11400000, guid: ac0cac964b933a848a0786a84cb81eb1, type: 2}
   - {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
-  spriteFood: {fileID: 21300000, guid: 5bc2fced817d47e448e56a8fe3893518, type: 3}
+  spriteFood: {fileID: 21300000, guid: ed8d0119f8850c04780c6f71fd65e9ac, type: 3}

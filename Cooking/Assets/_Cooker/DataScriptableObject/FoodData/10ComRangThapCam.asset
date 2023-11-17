@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ca21b266941dc34bbb6cefd7c04fc07, type: 2}
   - {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
   - {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
-  spriteFood: {fileID: 21300000, guid: 0643c6c8730d783429b5e036ee8880cd, type: 3}
+  spriteFood: {fileID: 21300000, guid: 75167311bddc9374997fcac271200f32, type: 3}
