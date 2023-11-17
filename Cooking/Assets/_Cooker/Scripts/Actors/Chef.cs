@@ -29,10 +29,10 @@ class ChefActor : ReceiveActor
     {
         Receive<GameAction>(message =>
         {
-            switch (message)
-            {
+            //switch (message)
+            //{
               
-            }
+            //}
         });
     }
 }
