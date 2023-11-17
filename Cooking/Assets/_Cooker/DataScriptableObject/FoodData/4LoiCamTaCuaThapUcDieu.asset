@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a92b08a550a3224fb53699b42e63729, type: 3}
+  m_Name: 4LoiCamTaCuaThapUcDieu
+  m_EditorClassIdentifier: 
+  nameFood: "L\u1EDDi c\u1EA3m t\u1EA1 c\u1EE7a th\u1EADp \u1EE9c \u0111i\u1EC3u"
+  cookingTime: 5
+  eatingTime: 5
+  ingredients:
+  - {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
+  - {fileID: 11400000, guid: cdf8a9c9e3a0d5c42b89895e3659e1ff, type: 2}
+  spriteFood: {fileID: 21300000, guid: 2cfee97acb42a374d8e2add6bdf87768, type: 3}
