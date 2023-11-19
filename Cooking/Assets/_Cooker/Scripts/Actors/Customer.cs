@@ -1,6 +1,6 @@
 using Akka.Actor;
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Customer : MonoBehaviour
@@ -14,7 +14,6 @@ public class Customer : MonoBehaviour
     
     IEnumerator MoveToTable()
     {
-        
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = table.transform.position;
         float distance = Vector3.Distance(startPosition, targetPosition);
@@ -30,16 +29,19 @@ public class Customer : MonoBehaviour
 
         transform.position = targetPosition;
     }
-    
+
+
+    public void OnOrdering(object o)
+    {
+        var selectedFood = (List<Menu>)o;
+        //TODO: 4. Handle animation or texture when customer order food here
+    }
 }
 
 
 class CustomerActor : ReceiveActor
 {
-    private IActorRef _chefCooker = Context.ActorOf(ChefCookerActor.Props(), "ChefCookerActor");
-    private IActorRef _dishWasher = Context.ActorOf(DishWasherActor.Props(), "DishWasherActor");
-    private IActorRef _chefPrepare = Context.ActorOf(ChefPrepareActor.Props(), "ChefPrepareActor");
-
+   
     public static Props Props()
     {
         return Akka.Actor.Props.Create(() => new CustomerActor());
@@ -47,12 +49,15 @@ class CustomerActor : ReceiveActor
 
     public CustomerActor()
     {
-        Receive<ActorAction>(message =>
+        Receive<GameAction>(message =>
         {
             switch (message)
             {
-                
-
+                case SelectSomeFoods selectSomeFoods:
+                    var someFunnyFood = selectSomeFoods.MenuToSelected.GetRange(0, 2); 
+                    //TODO: 3. Random some food or create pickFood func here & replace someFunnyFood
+                    Sender.Tell(new OrderFood(someFunnyFood));
+                    break;
             }
         });
     }

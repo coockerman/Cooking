@@ -23,13 +23,6 @@ class DishWasherActor : ReceiveActor
 
     public DishWasherActor()
     {
-        Receive<ActorAction>(message =>
-        {
-            switch (message)
-            {
-                
-            }
-        });
         
     }
 }

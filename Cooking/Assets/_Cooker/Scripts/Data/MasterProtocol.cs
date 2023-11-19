@@ -1,26 +1,14 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-//----------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------//
+
 public class GameScriptableObject : ScriptableObject { }
 
 
-//----------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------//
-public abstract class IngredientStatus { }
-
-public class RawIngredient : IngredientStatus { }
-
-public class ReadyIngredient : IngredientStatus { }
-
-
-
-
-//----------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------//
 public abstract class GameData { }
+
 public class InitializeGameData : GameData
 {
     public int NCustomer { get; }
@@ -41,98 +29,87 @@ public class InitializeGameData : GameData
 }
 
 
+public abstract class IngredientStatus : GameData { }
+
+public class RawIngredient : IngredientStatus { }
+
+public class ReadyIngredient : IngredientStatus { }
 
 
-//----------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------//
-public abstract class GameAction
-{
-    public Action<object> CallBack { get ;}
-    protected GameAction(Action<object> callBack)
-    {
-        CallBack = callBack;
-    }
-}
+/// <summary>
+///  GAME ACTIONS
+///  Using for communicate between monoBehaviors and actors
+/// </summary>
+public abstract class GameAction { }
+
 public class InitializeGame : GameAction
 {
     public InitializeGameData InitData { get; }
-    public InitializeGame(InitializeGameData initData, Action<object> callBack) : base(callBack)
+    public GameAreaManager GameManager { get; }
+
+    public InitializeGame(InitializeGameData initData, GameAreaManager gameManager) : base()
     {
         InitData = initData;
+        GameManager = gameManager;
     }
 }
-public class StartGame : GameAction
+
+public class SelectSomeFoods : GameAction
+{
+    public List<Menu> MenuToSelected;
+
+    public SelectSomeFoods(List<Menu> menuToSelected)
+    {
+        MenuToSelected = menuToSelected;
+    }
+}
+
+public class OrderFood : GameAction
+{
+    public List<Menu> OrderList;
+
+    public OrderFood(List<Menu> orderList)
+    {
+        OrderList = orderList;
+    }
+}
+
+public class PrepareIngredients : GameAction
+{
+    public List<Ingredient> RequireIngredients { get; }
+
+    public PrepareIngredients(List<Ingredient> requireIngredients)
+    {
+        RequireIngredients = requireIngredients;
+    }
+}
+
+public class OpenRestaurant : GameAction
 {
     public List<Menu> MenuByDay { get; }
-    public Chef Chef { get; }
-    public ChefCooker ChefCooker { get; }
+    public Customer Customer { get; }
 
-    public StartGame(List<Menu> menuByDay, Chef chef, ChefCooker chefSupport, Action<object> callBack) : base(callBack)
+    public OpenRestaurant(List<Menu> menuByDay, Customer customer)
     {
         MenuByDay = menuByDay;
-        Chef = chef;
-        ChefCooker = chefSupport;
+        Customer = customer;
     }
 }
+public class StartCooking : GameAction
+{
+   
+}
+
+
+
 public class SwitchToAutoMode : GameAction
 {
-    public SwitchToAutoMode(Action<object> callBack) : base(callBack) { }
+    public SwitchToAutoMode() : base() { }
 }
 
 public class SwitchToManualMode : GameAction
 {
-    public SwitchToManualMode(Action<object> callBack) : base(callBack) { }
+    public SwitchToManualMode() : base() { }
 }
-public class ProcessMaterial : GameAction
-{
-    public object Data { get; }
-
-    public ProcessMaterial(object data, Action<object> callBack) : base(callBack)
-    {
-        Data = data;
-    }
-}
-
-
-
-
-
-//----------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------//
-public abstract class ActorAction { }
-public class StartJob : ActorAction
-{
-    public object Data { get; }
-    public object MonoBehaviour { get; }
-
-    public StartJob(object data, object monoBehavior)
-    {
-        Data = data;
-        MonoBehaviour = monoBehavior;
-    }
-}
-public class ReveiceFood : ActorAction
-{
-    public object Data { get; }
-    public object MonoBehaviour { get; }
-
-    public ReveiceFood(object data, Action<object> monoBehaviour)
-    {
-        Data = data;
-        MonoBehaviour = monoBehaviour;
-    }
-}
-public class Order : ActorAction
-{
-    public object Data { get; }
-    public object MonoBehaviour { get; }
-
-    public Order(object data, object monoBehavior)
-    {
-        Data = data;
-        MonoBehaviour = monoBehavior;
-    }
-}
-
 
 

@@ -1,26 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Akka.Actor;
-using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChefCooker : MonoBehaviour
 {
-    Food foodWorking;
-    
     // Start is called before the first frame update
-    public void OnProcessMaterial(object data)
-    {
-        var menuByDay = (Dictionary<int, Menu>)data;
-
-    }
-    public void OnCooking(object data)
-    {
-        if(foodWorking == null)
-        {
-            foodWorking = (Food)data;
-        }
-    }
     void Start()
     {
         
@@ -33,47 +21,33 @@ public class ChefCooker : MonoBehaviour
     }
 }
 
+
 class ChefCookerActor : ReceiveActor
 {
+    private readonly int _maxWaitingPrepareIngredientsTime = 5;
     public static Props Props()
     {
         return Akka.Actor.Props.Create(() => new ChefCookerActor());
     }
-    
+
     public ChefCookerActor()
     {
-        Receive<ActorAction>(message =>
-        {
-            switch (message)
-            {
-                case StartJob actorAction:
-                    HandleStartJob(actorAction);
-                    break;
-                
-            }
-        });
-        
         Receive<GameAction>(message =>
         {
             switch (message)
             {
-               case ProcessMaterial processMaterial:
-                   ProcessMaterial(processMaterial);
-                   break;
-            }
+                case OrderFood orderFood:
+                    var menuRequests = orderFood.OrderList;
+                    var neededIngredients =
+                        (from menu in menuRequests
+                        from food in menu.Foods
+                        from ingredient in food.Ingredients
+                        select ingredient).ToList();
+                    
+                    var requestIngredients = new List<Task> { Sender.Ask(new PrepareIngredients(neededIngredients), TimeSpan.FromSeconds(_maxWaitingPrepareIngredientsTime)) };
+                    Task.WhenAll(requestIngredients).PipeTo(Self, Sender);
+                    break;
+            };
         });
-    }
-    private void HandleStartJob(StartJob startJob)
-    {
-        var menuByDay = (Dictionary<int, Menu>)startJob.Data;
-        var chefSupport = (ChefCooker)startJob.MonoBehaviour;
-        Action<object> callBackAction = (menu) => chefSupport.OnProcessMaterial(menuByDay);
-        Context.Self.Tell(new ProcessMaterial(menuByDay, callBackAction));
-    }
-    
-
-    private void ProcessMaterial(ProcessMaterial data)
-    {
-        data.CallBack(data.Data as Dictionary<int, Menu>);
     }
 }

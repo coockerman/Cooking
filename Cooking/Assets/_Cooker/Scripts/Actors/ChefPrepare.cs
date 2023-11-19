@@ -1,7 +1,4 @@
 using Akka.Actor;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ChefPrepare : MonoBehaviour
@@ -23,13 +20,7 @@ class ChefPrepareActor : ReceiveActor
 
     public ChefPrepareActor()
     {
-        Receive<ActorAction>(message =>
-        {
-            switch (message)
-            {
-                
-            }
-        });
+        
 
     }
     
