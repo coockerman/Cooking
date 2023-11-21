@@ -10,24 +10,32 @@ public class GameAreaManager : MonoBehaviour
 
     [SerializeField] private int customerEachRound;
     [SerializeField] private int totalChefs;
-    [SerializeField] private int totalChefSupporter;
+    [SerializeField] private int totalChefCooker;
     [SerializeField] private int totalDishWasher;
-    [SerializeField] private int totalWaiter;
+    [SerializeField] private int totalChefPrepare;
     
-    [SerializeField] private ChefCooker cookerPrefab;
-    [SerializeField] private ChefPrepare chefPreparePrefab;
+    [SerializeField] private GameObject cookerPrefab;
+    ChefCooker chefCooker;
+
+    [SerializeField] private GameObject chefPreparePrefab;
+    ChefPrepare chefPrepare;
+
+    [SerializeField] private GameObject boxHuman;
     [SerializeField] private Customer customerPrefabs;
     
-    [SerializeField] List<Menu> MenuRestaurant;    
-    
+    [SerializeField] List<Menu> MenuRestaurant;
+    [SerializeField] List<Ingredient> ListIngredient;
+
+
     private readonly ActorSystem _gameActorSystem = ActorSystem.Create("CookGameActorSystem");
     private IActorRef _gameManager;
 
     void Start()
     {
         _gameManager = _gameActorSystem.ActorOf(GameAreaManagerActor.Props(), "GameManagerActor");
-        var initGameData = new InitializeGameData(customerEachRound, totalChefs, totalChefSupporter, totalDishWasher, totalWaiter, true);
+        var initGameData = new InitializeGameData(customerEachRound, totalChefs, totalChefCooker, totalDishWasher, totalChefPrepare, true);
         _gameManager.Tell(new InitializeGame(initGameData, this));
+        
     }
    
     
@@ -48,10 +56,10 @@ public class GameAreaManager : MonoBehaviour
         //TODO: 1. Spawn prefab for each number of objectives below
         var maxCustomers = initGameData.NCustomer;
         var totalChefs = initGameData.NChef;
-        var totalChefSupports = initGameData.NChefSupporter;
-        var totalWaiters = initGameData.NWaiters;
+        var totalChefCooker = initGameData.NChefCooker;
+        var totalChefPrepare = initGameData.NChefPrepare;
         var totalDishWashers = initGameData.NDishWasher;
-        
+
         var allIngredients = LoadAllIngredients();
         
         _gameManager.Tell(new PrepareIngredients(allIngredients));
@@ -61,10 +69,19 @@ public class GameAreaManager : MonoBehaviour
     
     private List<Ingredient> LoadAllIngredients()
     {
-        //TODO: 2. Implement function body, load all ingredients from scriptable objects
-        return new List<Ingredient> { new Ingredient() };
+        return ListIngredient;
     }
 
+    private void SpawnObjects(GameObject prefabs, int count)
+    {
+        Debug.Log(count);
+        for (int i = 0; i < count; i++)
+        {
+            Debug.Log("a");
+            Instantiate(prefabs, boxHuman.transform);
+            Debug.Log(2);
+        }
+    }
     private void OnStartGame(object o)
     {
         Debug.Log("Game started");
@@ -75,6 +92,7 @@ public class GameAreaManager : MonoBehaviour
 class GameAreaManagerActor : ReceiveActor
 {
     private readonly int _maxWaitingTime = 3;
+    private int dayNow = 0;
     private bool _isGameStarted;
     private IActorRef _chefCooker = Context.ActorOf(ChefCookerActor.Props(), "ChefCookerActor");
     private IActorRef _dishWasher = Context.ActorOf(DishWasherActor.Props(), "DishWasherActor");
@@ -86,7 +104,7 @@ class GameAreaManagerActor : ReceiveActor
         return Akka.Actor.Props.Create(() => new GameAreaManagerActor());
     }
 
-    private GameAreaManagerActor()
+    public GameAreaManagerActor()
     {
         Receive<GameAction>(message =>
         {
@@ -108,7 +126,7 @@ class GameAreaManagerActor : ReceiveActor
 
                 case OpenRestaurant openRes:
                     var todayMenu = openRes.MenuByDay;
-                    var selectedFoodFromMenu = new List<Task> { _customer.Ask(new SelectSomeFoods(todayMenu), TimeSpan.FromSeconds(_maxWaitingTime)) };
+                    var selectedFoodFromMenu = new List<Task> { _customer.Ask(new SelectSomeFoods(todayMenu, dayNow), TimeSpan.FromSeconds(_maxWaitingTime)) };
                     Task.WhenAll(selectedFoodFromMenu).PipeTo(_chefCooker, Self);
                     break;
                 
