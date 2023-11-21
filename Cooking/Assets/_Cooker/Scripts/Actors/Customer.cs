@@ -5,43 +5,23 @@ using UnityEngine;
 
 public class Customer : MonoBehaviour
 {
-    Transform table;
-    [SerializeField] float speedRun;
 
     private void Start()
     {
+        
     }
     
-    IEnumerator MoveToTable()
-    {
-        Vector3 startPosition = transform.position;
-        Vector3 targetPosition = table.transform.position;
-        float distance = Vector3.Distance(startPosition, targetPosition);
-        float travelTime = distance / speedRun;
-
-        float elapsedTime = 0f;
-        while (elapsedTime < travelTime)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / travelTime);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.position = targetPosition;
-    }
-
 
     public void OnOrdering(object o)
     {
         var selectedFood = (List<Menu>)o;
-        //TODO: 4. Handle animation or texture when customer order food here
+
     }
 }
 
 
 class CustomerActor : ReceiveActor
 {
-   
     public static Props Props()
     {
         return Akka.Actor.Props.Create(() => new CustomerActor());
@@ -54,12 +34,31 @@ class CustomerActor : ReceiveActor
             switch (message)
             {
                 case SelectSomeFoods selectSomeFoods:
-                    var someFunnyFood = selectSomeFoods.MenuToSelected.GetRange(0, 2); 
-                    //TODO: 3. Random some food or create pickFood func here & replace someFunnyFood
-                    Sender.Tell(new OrderFood(someFunnyFood));
+                    var dayNow = selectSomeFoods.dayNow;
+                    var menu = selectSomeFoods.MenuToSelected.GetRange(0, 2);
+                    var foodOrder = SelectRandomFood(menu[dayNow]);
+                    Sender.Tell(new StartWaiting(foodOrder));
+                    break;
+                case StartWaiting waiting:
+                    Food food = waiting.foodOrder;
+                    StartWaitingFood();
                     break;
             }
         });
+        
     }
-    
+    Food SelectRandomFood(Menu menuDay)
+    {
+        List<Food> foods = menuDay.Foods;
+        if (foods == null || foods.Count == 0)
+        {
+            return null;
+        }
+        int randomIndex = UnityEngine.Random.Range(0, foods.Count);
+        return foods[randomIndex];
+    }
+    void StartWaitingFood()
+    {
+
+    }
 }
