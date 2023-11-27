@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016986704652747838}
-  - component: {fileID: 5500306400362673586}
+  - component: {fileID: 3831898050047192986}
   m_Layer: 0
   m_Name: PunPunCustomer
   m_TagString: Untagged
@@ -26,14 +26,14 @@ Transform:
   m_GameObject: {fileID: 3336420145981876120}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.18, y: -3.98, z: 0}
+  m_LocalPosition: {x: 7.92, y: -3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2050510394616165281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5500306400362673586
+--- !u!114 &3831898050047192986
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3336420145981876120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3e96a5d6aa39844bd0ae66ce35dbe0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e7752b3282cb1e489d0d9a5b44d9a46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRun: 4
 --- !u!1001 &818307534136953471
 PrefabInstance:
   m_ObjectHideFlags: 0

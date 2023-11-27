@@ -50,3 +50,9 @@ TagManager:
   - name: Human
     uniqueID: 1544479625
     locked: 0
+  - name: UI0
+    uniqueID: 1482514391
+    locked: 0
+  - name: UI
+    uniqueID: 363607549
+    locked: 0

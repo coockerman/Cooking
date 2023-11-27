@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4180383651137317593}
-  - component: {fileID: 3548814133088213791}
+  - component: {fileID: 5037199283064520035}
   m_Layer: 0
   m_Name: GordonCustomer
   m_TagString: Untagged
@@ -26,14 +26,14 @@ Transform:
   m_GameObject: {fileID: 7096728530395728765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.43, z: 0}
+  m_LocalPosition: {x: 7.92, y: -3.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4467919638529456692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3548814133088213791
+--- !u!114 &5037199283064520035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,10 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7096728530395728765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3e96a5d6aa39844bd0ae66ce35dbe0, type: 3}
+  m_Script: {fileID: 11500000, guid: bb67263685997a341be99cfa22b374bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedRun: 3
 --- !u!1001 &2967567822275724266
 PrefabInstance:
   m_ObjectHideFlags: 0

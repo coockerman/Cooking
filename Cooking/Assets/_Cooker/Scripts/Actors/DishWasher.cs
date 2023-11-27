@@ -14,15 +14,15 @@ public class DishWasher : MonoBehaviour
 
     
 }
-class DishWasherActor : ReceiveActor
-{
-    public static Props Props()
-    {
-        return Akka.Actor.Props.Create(() => new DishWasherActor());
-    }
+//class DishWasherActor : ReceiveActor
+//{
+//    public static Props Props()
+//    {
+//        return Akka.Actor.Props.Create(() => new DishWasherActor());
+//    }
 
-    public DishWasherActor()
-    {
+//    public DishWasherActor()
+//    {
         
-    }
-}
+//    }
+//}

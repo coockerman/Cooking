@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    private bool empty = true;
-    public bool Empty { get { return empty; } set { empty = value; } }
+    private Customer customer;
+    public Customer Customer { get { return customer; } set { customer = value; } }
+    
     
 }
