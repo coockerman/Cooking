@@ -707,6 +707,7 @@ MonoBehaviour:
   evaluateUI: {fileID: 214507744}
   boxCustomer: {fileID: 538638643}
   maxCustomer: 5
+  timeWaitSpawn: 5
   customerPrefabs:
   - {fileID: -7621972949040468063, guid: 5e7dcf7127ec0ab46818c0b8f24fbee2, type: 3}
   - {fileID: 5037199283064520035, guid: 69aaa6f6362baed45bf0e8b6b92b9356, type: 3}
@@ -718,6 +719,7 @@ MonoBehaviour:
   washItemPrefab: {fileID: 1939829644352520465, guid: 95d96092184bffe45b9fb68ae3f17c64, type: 3}
   dirtyPlateItemPrefab: {fileID: 5760283523261437403, guid: 600604efc4ab1764684ad25fd66a74a1, type: 3}
   dinnerTablePrefab: {fileID: 278987903469725610, guid: a45e2f53438b05149a1b895e6126008e, type: 3}
+  doorOut: {fileID: 830856303}
 --- !u!4 &455757131
 Transform:
   m_ObjectHideFlags: 0
@@ -1156,6 +1158,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &830856303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830856304}
+  m_Layer: 0
+  m_Name: DoorOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &830856304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830856303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.21, y: -3.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1352866276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871308168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,6 +2035,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 286541866}
+  - {fileID: 830856304}
   - {fileID: 1879345933}
   - {fileID: 1305416606}
   m_Father: {fileID: 0}

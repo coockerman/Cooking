@@ -1,60 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public enum ChefState
+{
+    bringFood,
+    work,
+    rest,
+    endTime
+}
 
 public class Chef : MonoBehaviour
 {
-    public float speed;
-    [SerializeField] bool isMoving;
-    private Rigidbody2D rb2d;
+    [SerializeField] Food foodBring;
+    ChefMovement chefMovement;
+    ChefState chefState;
 
-    [SerializeField] Animator anim;
-    float moveHorizontal;
-    float moveVertical;
-    private Vector2 lastMove;
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
 
-    void Update()
+    private void Start()
     {
-        GetInput();
+        chefMovement = GetComponent<ChefMovement>();
 
     }
-    private void FixedUpdate()
+    
+    private void Update()
     {
-        this.GetMoving();
-        this.SetMoveInAnim();
-        this.SetPosition();
-    }
-    public void GetInput()
-    {
-        moveHorizontal = Input.GetAxisRaw("Horizontal");
-        moveVertical = Input.GetAxisRaw("Vertical");
-
-    }
-    protected virtual void SetMoveInAnim()
-    {
-        anim.SetFloat("moveX", moveHorizontal);
-        anim.SetFloat("moveY", moveVertical);
-        anim.SetBool("IsWalk", isMoving);
-        anim.SetFloat("LastMoveX", lastMove.x);
-        anim.SetFloat("LastMoveY", lastMove.y);
-
-    }
-    protected virtual void GetMoving()
-    {
-        isMoving = false;
-        if (moveHorizontal > 0.5f || moveHorizontal < -0.5f || moveVertical > 0.5f || moveVertical < -0.5f)
+        if(chefState==ChefState.bringFood)
         {
-            isMoving = true;
-            lastMove = new Vector2(moveHorizontal, moveVertical);
+
+        }
+        else if(chefState == ChefState.work)
+        {
+            if(chefMovement.IsWork == false)
+            {
+                chefMovement.IsWork = true;
+            }
+        }
+        else if(chefState == ChefState.rest)
+        {
+            if (chefMovement.IsWork == true)
+            {
+                chefMovement.IsWork = false;
+            }
+        }
+        else if (chefState == ChefState.endTime)
+        {
+            if (chefMovement.IsWork == false)
+            {
+                chefMovement.IsWork = true;
+            }
+        }
+
+        
+    }
+    
+
+    public Food ServeFood()
+    {
+        Food food = foodBring;
+        foodBring = null;
+        chefState = ChefState.rest;
+        return food;
+    }
+    public void SetIsWork(bool isWork)
+    {
+        if(isWork)
+        {
+            chefState = ChefState.work;
+        }else if(!isWork)
+        {
+            chefState = ChefState.rest;
         }
     }
-    protected virtual void SetPosition()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+        if(collision.gameObject.tag == "CookItem")
+        {
+            if (chefState != ChefState.rest) return;
+            foodBring = collision.GetComponent<CookItem>().GetDishFinish();
+            chefState = ChefState.bringFood;
+        }
 
     }
 }

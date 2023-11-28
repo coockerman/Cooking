@@ -7,11 +7,12 @@ using UnityEngine.UI;
 
 public class CookUI : MonoBehaviour
 {
+    [SerializeField] GameAreaManager gameAreaManager;
     public static CookUI _instance;
     [SerializeField] GameObject UI;
     [SerializeField] Button exitBtn;
     public UnityEvent<bool> statusCookUI;
-    public UnityEvent<bool> StatusCookUI { get { return statusCookUI; } set { statusCookUI = value; } }
+    
     private void Start()
     {
         Initialization();
@@ -24,11 +25,11 @@ public class CookUI : MonoBehaviour
         }
         exitBtn.onClick.AddListener(() => SetStatusObj(false));
         statusCookUI.AddListener(SetStatusObj);
-        SetStatusObj(false);
 
     }
-    void SetStatusObj(bool status)
+    public void SetStatusObj(bool status)
     {
         UI.SetActive(status);
+        gameAreaManager.Chef.SetIsWork(status);
     }
 }

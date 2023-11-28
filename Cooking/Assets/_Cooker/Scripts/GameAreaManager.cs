@@ -29,6 +29,8 @@ public class GameAreaManager : MonoBehaviour
     ChefPrepare chefPrepare;
     DishWasher dishWasher;
 
+    public Chef Chef { get { return chef; } set { chef = value; } }
+
     //Menu
     [SerializeField] List<Menu> MenuRestaurant;
     [SerializeField] List<Menu> MenuRestaurantSpecial;
@@ -139,11 +141,9 @@ public class GameAreaManager : MonoBehaviour
     }
     private IEnumerator SpawnCustomers()
     {
-        
-
         while (true)
         {
-            if (customerCount < 10)
+            if (customerCount < 5)
             {
                 Customer randomCustomerPrefab = GetRandomCustomerPrefab();
                 GameObject customerObject = Instantiate(randomCustomerPrefab.gameObject, boxCustomer.transform);
@@ -175,9 +175,12 @@ public class GameAreaManager : MonoBehaviour
     // Phương thức để xoá khách hàng khỏi danh sách khi rời đi
     public void RemoveCustomer(Customer customer)
     {
-        customerCount--;
+        if(customerCount>=1)
+        {
+            customerCount--;
+        }
         spawnedCustomers.Remove(customer);
-        Debug.Log($"Customer {customer.name} removed");
+        DinnerTable.OutTable(customer);
     }
 
 }

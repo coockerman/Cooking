@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class CookItem : MonoBehaviour
 {
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    [SerializeField] Food foodFinish;
+    
+    public Food GetDishFinish()
     {
-        if (collision.gameObject.tag == "Player")
+        return foodFinish;
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Player"&&Input.GetKeyDown(KeyCode.E))
         {
             CookUI._instance.statusCookUI?.Invoke(true);
         }
     }
+    
 }
