@@ -24,7 +24,12 @@ public class ChefMovement : MonoBehaviour
 
     void Update()
     {
-        if (isWork) return;
+        if (isWork)
+        {
+            moveHorizontal = 0;
+            moveVertical = 0;
+            return;
+        }
         GetInput();
 
     }

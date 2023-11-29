@@ -58,7 +58,7 @@ public class GameAreaManager : MonoBehaviour
     [SerializeField] private GameObject boxItem;
     [SerializeField] private GameObject cookItemPrefab;
     private CookItem cookItem;
-
+    public CookItem CookItem => cookItem;
     //Tủ lạnh
     [SerializeField] private GameObject fridgeItemPrefab;
     private FridgeItem fridgeItem;
@@ -66,9 +66,12 @@ public class GameAreaManager : MonoBehaviour
     //Bồn rửa
     [SerializeField] private GameObject washItemPrefab;
     private WashItem washItem;
+    public WashItem WashItem => washItem;
 
     //Ba lô
+    [SerializeField] private GameObject bagPrefab;
     private Bag bag;
+    public Bag Bag => bag;
 
     //Đĩa bẩn
     [SerializeField] private GameObject dirtyPlateItemPrefab;
@@ -130,6 +133,9 @@ public class GameAreaManager : MonoBehaviour
 
         //load bồn rửa
         washItem = Instantiate(washItemPrefab, boxItem.transform).GetComponent<WashItem>();
+
+        //load bag
+        bag = Instantiate(bagPrefab, boxItem.transform).GetComponent<Bag>();
 
         //load đĩa bẩn
         dirtyPlateItem = Instantiate(dirtyPlateItemPrefab, boxItem.transform).GetComponent<DirtyPlateItem>();

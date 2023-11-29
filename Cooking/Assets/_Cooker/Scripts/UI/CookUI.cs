@@ -12,6 +12,7 @@ public class CookUI : MonoBehaviour
     [SerializeField] GameObject UI;
     [SerializeField] Button exitBtn;
     public UnityEvent<bool> statusCookUI;
+    CookItem cookItem;
     
     private void Start()
     {
@@ -25,7 +26,7 @@ public class CookUI : MonoBehaviour
         }
         exitBtn.onClick.AddListener(() => SetStatusObj(false));
         statusCookUI.AddListener(SetStatusObj);
-
+        cookItem = gameAreaManager.CookItem;
     }
     public void SetStatusObj(bool status)
     {

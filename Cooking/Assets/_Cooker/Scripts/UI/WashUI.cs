@@ -1,42 +1,93 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class WashUI : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class WashUI : MonoBehaviour
 {
-    private bool isDragging = false;
-    [SerializeField] GameObject Wash;
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    [SerializeField] List<Stain> listStains;
+    [SerializeField] GameAreaManager gameAreaManager;
+    [SerializeField] GameObject UIBtn;
+    [SerializeField] GameObject UIUWash;
+    [SerializeField] Button exitBtn;
+    public static WashUI _instance;
+    public UnityEvent<bool> statusWashUI;
+    WashItem washItem;
 
+    bool isClosed;
+    [SerializeField] float timeDelayClosed;
     void Start()
     {
-        rectTransform = Wash.GetComponent<RectTransform>();
-        canvasGroup = Wash.GetComponent<CanvasGroup>();
+        Initialization();
     }
-
-    public void OnPointerDown(PointerEventData eventData)
+    void Initialization()
     {
-        // Bắt đầu kéo đối tượng
-        isDragging = true;
-        canvasGroup.blocksRaycasts = false;
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        washItem = gameAreaManager.WashItem;
+        exitBtn.onClick.AddListener(() => SetStatusObj(false));
+        statusWashUI.AddListener(SetStatusObj);
+        isClosed = true;
     }
-
-    public void OnDrag(PointerEventData eventData)
+    void LoadStain()
     {
-        // Di chuyển đối tượng theo vị trí của chuột
-        rectTransform.anchoredPosition += eventData.delta / canvasGroup.transform.localScale.x;
+        foreach(Stain stain in listStains)
+        {
+            stain.IsStain = false;
+            stain.gameObject.SetActive(true);
+        }
     }
-
-    public void OnPointerUp(PointerEventData eventData)
+    public void DragStain(Stain stainInput)
     {
-        // Kết thúc kéo đối tượng
-        isDragging = false;
-        canvasGroup.blocksRaycasts = true;
+        foreach (Stain stain in listStains)
+        {
+            if(stainInput == stain)
+            {
+                stain.IsStain = true;
+                stainInput.gameObject.SetActive(false);
+            }
+        }
+        CheckStain();
     }
-    public void OffObj()
+    void CheckStain()
     {
-        gameObject.SetActive(false);
+        foreach (Stain stain in listStains)
+        {
+            if(!stain.IsStain)
+            {
+                return;
+            }
+        }
+        isClosed = false;
+        StartCoroutine(DelayClosed());
     }
+    private IEnumerator DelayClosed()
+    {
+        // Chờ 2 giây
+        yield return new WaitForSeconds(timeDelayClosed);
+        isClosed = true;
+        FinishWash();
+        SetStatusObj(false);
+    }
+    public void SetStatusObj(bool status)
+    {
+        if (isClosed == false) return;
+        UIBtn.SetActive(status);
+        UIUWash.SetActive(status);
+        if(status)
+        {
+            LoadStain();
+        }
+        gameAreaManager.Chef.SetIsWork(status);
+    }
+    void FinishWash()
+    {
+        
+    }
+    
 }
