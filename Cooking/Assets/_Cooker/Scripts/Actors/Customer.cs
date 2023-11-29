@@ -2,6 +2,7 @@ using Akka.Actor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public enum CustomerState
 {
@@ -26,6 +27,8 @@ public abstract class Customer : MonoBehaviour
 
     private float moveDuration;
     private float timeWaitFood;
+
+    CustomerUIPrefab customerUI;
     private void Start()
     {
         customerState = CustomerState.FindTable;
@@ -43,6 +46,7 @@ public abstract class Customer : MonoBehaviour
         else if (customerState == CustomerState.Order)
         {
             Order();
+            customerUI.SetStatusBoxImgDish(true, foodOrder);
             customerState = CustomerState.StartWaitFood;
         }
         else if(customerState == CustomerState.StartWaitFood)
@@ -52,6 +56,8 @@ public abstract class Customer : MonoBehaviour
         }
         else if(customerState == CustomerState.StartEatingFood)
         {
+            customerUI.SetStatusBoxImgDish(true, foodGet);
+            customerUI.ChangeStatusEat();
             EatingFood(foodOrder);
             customerState = CustomerState.EatingFood;
         }
@@ -62,8 +68,13 @@ public abstract class Customer : MonoBehaviour
         else if(customerState == CustomerState.OutTable)
         {
             OutTable();
+            customerUI.SetStatusBoxImgDish(false, foodOrder);
             StartCoroutine(MoveObject(gameAreaManager.DoorOut.transform, true));
         }
+    }
+    public void SetCustomerUIPrefab(CustomerUIPrefab customerUI)
+    {
+        this.customerUI = customerUI;
     }
     protected virtual Table FindTable()
     {
@@ -88,15 +99,37 @@ public abstract class Customer : MonoBehaviour
     }
     protected IEnumerator WaitFood(float timeWait)
     {
-        yield return new WaitForSeconds(timeWait);
-        if(customerState!= CustomerState.EatingFood)
+        float elapsedTime = 0f;
+
+        while (elapsedTime < timeWait && customerState != CustomerState.EatingFood)
+        {
+            
+            customerUI.ChangeCountWaiting(elapsedTime/timeWait);
+            // Tăng thời gian đã trôi qua
+            elapsedTime += Time.deltaTime;
+
+            // Chờ một frame
+            yield return null;
+        }
+        if (customerState!= CustomerState.EatingFood)
         {
             customerState = CustomerState.Evalute;
         }
     }
     protected IEnumerator EatingFood(Food food)
     {
-        yield return new WaitForSeconds((float)food.EatingTime);
+        float elapsedTime = 0f;
+        float timeEat = food.EatingTime;
+        while (elapsedTime < timeEat)
+        {
+
+            customerUI.ChangeCountWaiting(elapsedTime / timeEat);
+            // Tăng thời gian đã trôi qua
+            elapsedTime += Time.deltaTime;
+
+            // Chờ một frame
+            yield return null;
+        }
         customerState = CustomerState.Evalute;
     }
     protected virtual void OutTable()
@@ -109,6 +142,7 @@ public abstract class Customer : MonoBehaviour
 
         if (die)
         {
+            Destroy(customerUI.gameObject);
             Destroy(gameObject);
         }
     }

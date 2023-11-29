@@ -50,9 +50,12 @@ public class GameAreaManager : MonoBehaviour
 
     //Khách hàng
     [SerializeField] private GameObject boxCustomer;
+    [SerializeField] private GameObject boxCustomerUI;
     [SerializeField] float timeWaitSpawn = 5;
     private List<Customer> spawnedCustomers = new List<Customer>();
     [SerializeField] private Customer[] customerPrefabs;
+    [SerializeField] GameObject CustomerUIPrefab;
+
 
     //Nồi nấu
     [SerializeField] private GameObject boxItem;
@@ -151,10 +154,15 @@ public class GameAreaManager : MonoBehaviour
             {
                 Customer randomCustomerPrefab = GetRandomCustomerPrefab();
                 GameObject customerObject = Instantiate(randomCustomerPrefab.gameObject, boxCustomer.transform);
+                GameObject customerUIObject = Instantiate(CustomerUIPrefab, boxCustomerUI.transform);
 
                 // Lấy component Customer từ GameObject
                 Customer customerComponent = customerObject.GetComponent<Customer>();
+                CustomerUIPrefab customerUI = customerUIObject.GetComponent<CustomerUIPrefab>();
                 customerComponent.gameAreaManager = this;
+                customerComponent.SetCustomerUIPrefab(customerUI);
+
+                customerUI.SetCustomerHover(customerComponent);
 
                 // Thêm khách hàng vào danh sách
                 spawnedCustomers.Add(customerComponent);
