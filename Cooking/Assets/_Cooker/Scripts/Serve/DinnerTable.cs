@@ -16,6 +16,17 @@ public class DinnerTable : MonoBehaviour
             Instance = this;
         }
     }
+    public bool CheckTable()
+    {
+        foreach (Table table in Tables)
+        {
+            if (table.Customer == null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public Table ChoseTable(Customer customer)
     {
         listTablesEmpty = new List<Table>();

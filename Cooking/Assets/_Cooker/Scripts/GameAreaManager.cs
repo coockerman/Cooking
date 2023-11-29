@@ -50,8 +50,6 @@ public class GameAreaManager : MonoBehaviour
 
     //Khách hàng
     [SerializeField] private GameObject boxCustomer;
-    [SerializeField] private int maxCustomer;
-    int customerCount = 0;
     [SerializeField] float timeWaitSpawn = 5;
     private List<Customer> spawnedCustomers = new List<Customer>();
     [SerializeField] private Customer[] customerPrefabs;
@@ -143,7 +141,7 @@ public class GameAreaManager : MonoBehaviour
     {
         while (true)
         {
-            if (customerCount < 5)
+            if (dinnerTable.CheckTable())
             {
                 Customer randomCustomerPrefab = GetRandomCustomerPrefab();
                 GameObject customerObject = Instantiate(randomCustomerPrefab.gameObject, boxCustomer.transform);
@@ -154,8 +152,6 @@ public class GameAreaManager : MonoBehaviour
 
                 // Thêm khách hàng vào danh sách
                 spawnedCustomers.Add(customerComponent);
-
-                customerCount++;
             }
             else
             {
@@ -175,10 +171,6 @@ public class GameAreaManager : MonoBehaviour
     // Phương thức để xoá khách hàng khỏi danh sách khi rời đi
     public void RemoveCustomer(Customer customer)
     {
-        if(customerCount>=1)
-        {
-            customerCount--;
-        }
         spawnedCustomers.Remove(customer);
         DinnerTable.OutTable(customer);
     }
