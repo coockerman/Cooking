@@ -15,15 +15,15 @@ public class Chef : MonoBehaviour
 {
     [SerializeField] Food foodBring;
     ChefMovement chefMovement;
+    ChefUI chefUI;
     ChefState chefState;
 
 
     private void Start()
     {
         chefMovement = GetComponent<ChefMovement>();
-
     }
-    
+
     private void Update()
     {
         if(chefState==ChefState.bringFood)
@@ -54,12 +54,25 @@ public class Chef : MonoBehaviour
 
         
     }
-    
+    public void SetChefUI(ChefUI chefUI)
+    {
+        this.chefUI = chefUI;
+        this.chefUI.SetStatusBoxImg(foodBring);
+    }
+    public void BringFood(Food food)
+    {
+        if(chefState == ChefState.rest)
+        {
+            foodBring = food;
+            chefUI.SetStatusBoxImg(foodBring);
+        }
+    }
 
     public Food ServeFood()
     {
         Food food = foodBring;
         foodBring = null;
+        chefUI.SetStatusBoxImg(foodBring);
         chefState = ChefState.rest;
         return food;
     }

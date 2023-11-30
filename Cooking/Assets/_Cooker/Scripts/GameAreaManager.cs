@@ -19,12 +19,18 @@ public class GameAreaManager : MonoBehaviour
 
     //Nhân vật
     [SerializeField] private GameObject boxHuman;
+    [SerializeField] private GameObject boxUIHuman;
+
     [SerializeField] GameObject chefPrefab;
+    [SerializeField] GameObject chefUIPrefab;
+
     [SerializeField] GameObject chefCookerPrefab;
     [SerializeField] GameObject chefPreparePrefab;
     [SerializeField] GameObject dishWasherPrefab;
 
     Chef chef;
+    ChefUI chefUI;
+
     ChefCooker chefCooker;
     ChefPrepare chefPrepare;
     DishWasher dishWasher;
@@ -40,7 +46,8 @@ public class GameAreaManager : MonoBehaviour
     public Menu MenuSpecialByDay => menuSpecialByDay;
 
     //Nguyên liệu(default)
-    [SerializeField] List<Ingredient> ListIngredient;
+    [SerializeField] List<Ingredient> listIngredient;
+    public List<Ingredient> ListIngredient => listIngredient;
 
     //Đánh giá
     [SerializeField] private EvaluateUI evaluateUI;
@@ -62,9 +69,11 @@ public class GameAreaManager : MonoBehaviour
     [SerializeField] private GameObject cookItemPrefab;
     private CookItem cookItem;
     public CookItem CookItem => cookItem;
+
     //Tủ lạnh
     [SerializeField] private GameObject fridgeItemPrefab;
     private FridgeItem fridgeItem;
+    public FridgeItem FridgeItem => fridgeItem;
 
     //Bồn rửa
     [SerializeField] private GameObject washItemPrefab;
@@ -88,9 +97,11 @@ public class GameAreaManager : MonoBehaviour
     //Cửa ra
     [SerializeField] GameObject doorOut;
     public GameObject DoorOut => doorOut;
-    void Start()
+    void Awake()
     {
         areaState = AreaState.StartGame;
+        if (day == 0) day = 1;
+        LoadStartGame(day);
     }
    
     
@@ -98,8 +109,6 @@ public class GameAreaManager : MonoBehaviour
     {
         if(areaState == AreaState.StartGame)
         {
-            if (day == 0) day = 1;
-            LoadStartGame(day);
             areaState = AreaState.OnSpawn;
         }
         else if(areaState == AreaState.OnSpawn)
@@ -118,11 +127,21 @@ public class GameAreaManager : MonoBehaviour
     }
     void LoadStartGame(int day)
     {
-        //loadNhanVat
+    //loadNhanVat
+        //loadChef
         chef = Instantiate(chefPrefab, boxHuman.transform).GetComponent<Chef>();
+        chefUI = Instantiate(chefUIPrefab, boxUIHuman.transform).GetComponent<ChefUI>();
+
+        chef.SetChefUI(chefUI);
+        chefUI.SetChefHover(chef);
+
         chefCooker = Instantiate(chefCookerPrefab, boxHuman.transform).GetComponent<ChefCooker>();
         chefPrepare = Instantiate(chefPreparePrefab, boxHuman.transform).GetComponent<ChefPrepare>();
         dishWasher = Instantiate(dishWasherPrefab, boxHuman.transform).GetComponent<DishWasher>();
+
+        //load bag
+        bag = Instantiate(bagPrefab, boxItem.transform).GetComponent<Bag>();
+        bag.SetUpItemBag(listIngredient);
 
         //loadMenu
         menuByDay = MenuRestaurant[day - 1];
@@ -133,12 +152,13 @@ public class GameAreaManager : MonoBehaviour
 
         //load tủ lạnh
         fridgeItem = Instantiate(fridgeItemPrefab, boxItem.transform).GetComponent<FridgeItem>();
+        fridgeItem.SetIngredients(listIngredient);
+        fridgeItem.SetBag(bag);
 
         //load bồn rửa
         washItem = Instantiate(washItemPrefab, boxItem.transform).GetComponent<WashItem>();
 
-        //load bag
-        bag = Instantiate(bagPrefab, boxItem.transform).GetComponent<Bag>();
+        
 
         //load đĩa bẩn
         dirtyPlateItem = Instantiate(dirtyPlateItemPrefab, boxItem.transform).GetComponent<DirtyPlateItem>();

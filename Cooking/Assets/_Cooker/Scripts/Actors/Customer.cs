@@ -11,7 +11,6 @@ public enum CustomerState
     Order,
     StartWaitFood,
     WaitingFood,
-    StartEatingFood,
     EatingFood,
     Evalute,
     OutTable,
@@ -46,20 +45,13 @@ public abstract class Customer : MonoBehaviour
         else if (customerState == CustomerState.Order)
         {
             Order();
-            customerUI.SetStatusBoxImgDish(true, foodOrder);
+            customerUI.SetStatusBoxImgDish(true, foodOrder, true);
             customerState = CustomerState.StartWaitFood;
         }
         else if(customerState == CustomerState.StartWaitFood)
         {
             StartCoroutine(WaitFood(timeWaitFood));
             customerState = CustomerState.WaitingFood;
-        }
-        else if(customerState == CustomerState.StartEatingFood)
-        {
-            customerUI.SetStatusBoxImgDish(true, foodGet);
-            customerUI.ChangeStatusEat();
-            EatingFood(foodOrder);
-            customerState = CustomerState.EatingFood;
         }
         else if (customerState == CustomerState.Evalute)
         {
@@ -68,7 +60,7 @@ public abstract class Customer : MonoBehaviour
         else if(customerState == CustomerState.OutTable)
         {
             OutTable();
-            customerUI.SetStatusBoxImgDish(false, foodOrder);
+            customerUI.SetStatusBoxImgDish(false, foodOrder, true);
             StartCoroutine(MoveObject(gameAreaManager.DoorOut.transform, true));
         }
     }
@@ -123,7 +115,7 @@ public abstract class Customer : MonoBehaviour
         while (elapsedTime < timeEat)
         {
 
-            customerUI.ChangeCountWaiting(elapsedTime / timeEat);
+            customerUI.ChangeCountEating(elapsedTime / timeEat);
             // Tăng thời gian đã trôi qua
             elapsedTime += Time.deltaTime;
 
@@ -177,6 +169,11 @@ public abstract class Customer : MonoBehaviour
         if(foodGet != null)
         {
             customerState = CustomerState.EatingFood;
+            if(foodGet != foodOrder)
+            {
+                customerUI.SetStatusBoxImgDish(true, foodGet, false);
+            }
+            customerUI.ChangeStatusEat();
             StartCoroutine(EatingFood(foodGet));
         }
         

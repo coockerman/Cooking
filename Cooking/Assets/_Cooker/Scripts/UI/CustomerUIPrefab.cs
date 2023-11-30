@@ -8,6 +8,7 @@ public class CustomerUIPrefab : MonoBehaviour
     Customer customerHover;
     [SerializeField] GameObject BoxImgDish;
     [SerializeField] Image imgDish;
+    [SerializeField] Image bg;
     [SerializeField] Slider WaitingUI;
     [SerializeField] Slider EatingUI;
     private void Update()
@@ -22,13 +23,18 @@ public class CustomerUIPrefab : MonoBehaviour
     {
         this.customerHover = customer;
     }
-    public void SetStatusBoxImgDish(bool status, Food food)
+    public void SetStatusBoxImgDish(bool status, Food food, bool correctFood)
     {
         SetImgDish(food);
+        if(!correctFood)
+        {
+            bg.color = Color.red;
+        }
         BoxImgDish.SetActive(status);
     }
     public void ChangeStatusEat()
     {
+        Debug.Log("change");
         WaitingUI.gameObject.SetActive(false);
         EatingUI.gameObject.SetActive(true);
     }
