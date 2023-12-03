@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2952284f7d9067b479b34d00df53f600, type: 3}
   m_Name: 3ThitKimCuong
   m_EditorClassIdentifier: 
-  nameIngredient: "Th\u1ECBt kim c\u01B0\u01A1ng"
-  spriteIngredient: {fileID: 21300000, guid: b3cc0cafe65425d4f8ca19094faddb88, type: 3}
+  NameIngredient: "Th\u1ECBt kim c\u01B0\u01A1ng"
+  SpriteIngredient: {fileID: 21300000, guid: 1a85eba452060f547984e8854f6f7f77, type: 3}
+  MaxStackSize: 3

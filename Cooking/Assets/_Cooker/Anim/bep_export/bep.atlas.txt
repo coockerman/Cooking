@@ -1,0 +1,32 @@
+bep.png
+size:196,76
+filter:Linear,Linear
+pma:true
+Layer 3
+bounds:2,4,96,70
+offsets:1,1,98,72
+bep chay
+bounds:173,2,21,9
+offsets:1,1,23,11
+bep chay 2
+bounds:173,13,21,9
+offsets:1,1,23,11
+herb
+bounds:100,6,23,20
+offsets:1,1,25,22
+little smoke
+bounds:144,10,13,12
+offsets:1,1,15,14
+little smoke 3
+bounds:159,10,12,12
+offsets:1,1,14,14
+newpot
+bounds:100,28,46,50
+rotate:90
+pan
+bounds:152,24,37,50
+offsets:1,1,39,52
+steak
+bounds:125,2,24,17
+offsets:1,1,26,19
+rotate:90

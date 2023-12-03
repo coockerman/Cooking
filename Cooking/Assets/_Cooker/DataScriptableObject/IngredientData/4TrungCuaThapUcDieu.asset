@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2952284f7d9067b479b34d00df53f600, type: 3}
   m_Name: 4TrungCuaThapUcDieu
   m_EditorClassIdentifier: 
-  nameIngredient: "Tr\u1EE9ng c\u1EE7a th\u1EADp \u1EE9c \u0111i\u1EC3u"
-  spriteIngredient: {fileID: 21300000, guid: d57f307341629db4797c36c8794f0657, type: 3}
+  NameIngredient: "Tr\u1EE9ng c\u1EE7a th\u1EADp \u1EE9c \u0111i\u1EC3u"
+  SpriteIngredient: {fileID: 21300000, guid: daf4c80556cc95d488a16cc9994cfc8c, type: 3}
+  MaxStackSize: 3

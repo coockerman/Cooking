@@ -10,8 +10,7 @@ public class WashUI : MonoBehaviour
 {
     [SerializeField] List<Stain> listStains;
     [SerializeField] GameAreaManager gameAreaManager;
-    [SerializeField] GameObject UIBtn;
-    [SerializeField] GameObject UIUWash;
+    [SerializeField] GameObject UIWash;
     [SerializeField] Button exitBtn;
     public static WashUI _instance;
     public UnityEvent<bool> statusWashUI;
@@ -77,8 +76,7 @@ public class WashUI : MonoBehaviour
     public void SetStatusObj(bool status)
     {
         if (isClosed == false) return;
-        UIBtn.SetActive(status);
-        UIUWash.SetActive(status);
+        UIWash.SetActive(status);
         if(status)
         {
             LoadStain();

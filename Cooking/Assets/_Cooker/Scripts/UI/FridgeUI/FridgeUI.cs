@@ -11,7 +11,6 @@ public class FridgeUI : MonoBehaviour
     public static FridgeUI _instance;
 
     [SerializeField] GameObject UIBtn;
-    [SerializeField] GameObject UIFridgeObj;
 
     [SerializeField] GameObject BoxCurrentBtn;
     [SerializeField] GameObject currentBtnIngredientPrefab;
@@ -50,7 +49,6 @@ public class FridgeUI : MonoBehaviour
     public void SetStatusObj(bool status)
     {
         UIBtn.SetActive(status);
-        UIFridgeObj.SetActive(status);
         gameAreaManager.Chef.SetIsWork(status);
         if(status && !isLoadData)
         {
@@ -63,7 +61,7 @@ public class FridgeUI : MonoBehaviour
         CleanFridgeUI();
 
         // Add a delay of 2 seconds
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
 
         List<Ingredient> ingredients = fridgeItem.GetIngredients();
         foreach (Ingredient current in ingredients)
@@ -83,8 +81,8 @@ public class FridgeUI : MonoBehaviour
     }
     void AddToBag(Ingredient ingredient, int sl)
     {
-        fridgeItem.AddToBag(ingredient, sl);
-        Debug.Log("Add: " + sl + " " + ingredient.NameIngredient);
+        gameAreaManager.InventoryHolder.InventorySystem.AddToInventory(ingredient, sl);
+        
     }
     void CleanFridgeUI()
     {

@@ -81,9 +81,8 @@ public class GameAreaManager : MonoBehaviour
     public WashItem WashItem => washItem;
 
     //Ba lô
-    [SerializeField] private GameObject bagPrefab;
-    private Bag bag;
-    public Bag Bag => bag;
+    InventoryHolder inventoryHolder;
+    public InventoryHolder InventoryHolder { get { return inventoryHolder; } set {  inventoryHolder = value; } }
 
     //Đĩa bẩn
     [SerializeField] private GameObject dirtyPlateItemPrefab;
@@ -140,8 +139,7 @@ public class GameAreaManager : MonoBehaviour
         dishWasher = Instantiate(dishWasherPrefab, boxHuman.transform).GetComponent<DishWasher>();
 
         //load bag
-        bag = Instantiate(bagPrefab, boxItem.transform).GetComponent<Bag>();
-        bag.SetUpItemBag(listIngredient);
+        inventoryHolder = gameObject.GetComponent<InventoryHolder>();
 
         //loadMenu
         menuByDay = MenuRestaurant[day - 1];
@@ -153,7 +151,6 @@ public class GameAreaManager : MonoBehaviour
         //load tủ lạnh
         fridgeItem = Instantiate(fridgeItemPrefab, boxItem.transform).GetComponent<FridgeItem>();
         fridgeItem.SetIngredients(listIngredient);
-        fridgeItem.SetBag(bag);
 
         //load bồn rửa
         washItem = Instantiate(washItemPrefab, boxItem.transform).GetComponent<WashItem>();

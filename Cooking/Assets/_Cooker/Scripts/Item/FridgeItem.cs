@@ -19,11 +19,11 @@ public class FridgeItem : MonoBehaviour
     {
         this.bag = bag;
     }
-    public void AddToBag(Ingredient ingredient, int sl)
-    {
-        ItemBag bagItem = new ItemBag(ingredient);
-        bag.AddItem(sl, bagItem);
-    }
+    //public void AddToBag(Ingredient ingredient, int sl)
+    //{
+    //    ItemBag bagItem = new ItemBag(ingredient);
+    //    bag.AddItem(sl, bagItem);
+    //}
     private void OnTriggerStay2D(Collider2D collision)
     {
 

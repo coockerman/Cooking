@@ -1,36 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class Sponge : MonoBehaviour
 {
-    
-    private bool isDragging = false;
-    private Vector3 offset;
-
-    private void OnMouseDown()
-    {
-        // Tính toán khoảng cách giữa vị trí chuột và vị trí GameObject
-        offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        isDragging = true;
-    }
-
-    private void OnMouseUp()
-    {
-        isDragging = false;
-    }
-
+    private bool isDragging = true;
+    public float sensitivity = 0.1f;
     private void Update()
     {
-        Debug.Log("true");
+        
         if (isDragging)
         {
-            // Chuyển đổi vị trí chuột thành vị trí thế giới
-            Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            // Áp dụng offset để đảm bảo GameObject không nhảy đột ngột
-            transform.position = new Vector3(cursorPosition.x + offset.x, cursorPosition.y + offset.y, transform.position.z);
-            Debug.Log("A");
+            transform.position = Mouse.current.position.ReadValue();
         }
+    }
+    public static bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = Mouse.current.position.ReadValue();
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }
