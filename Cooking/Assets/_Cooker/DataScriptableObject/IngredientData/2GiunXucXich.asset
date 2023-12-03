@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 2GiunXucXich
   m_EditorClassIdentifier: 
   NameIngredient: "Giun x\xFAc x\xEDch"
-  SpriteIngredient: {fileID: 21300000, guid: 20fed87ef9b18ba41a1aa1b1aa6a8d53, type: 3}
+  SpriteIngredient: {fileID: 21300000, guid: d8d64a88ed6c9a24588e911647e83d60, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: f166168a471d57841a65b09827c2dda4, type: 3}
   MaxStackSize: 3

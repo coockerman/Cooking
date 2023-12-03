@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ public enum ChefState
 public class Chef : MonoBehaviour
 {
     [SerializeField] Food foodBring;
+    public Food FoodBring { get { return foodBring; } }
     ChefMovement chefMovement;
     ChefUI chefUI;
     ChefState chefState;
@@ -59,13 +61,15 @@ public class Chef : MonoBehaviour
         this.chefUI = chefUI;
         this.chefUI.SetStatusBoxImg(foodBring);
     }
-    public void BringFood(Food food)
+    public bool BringFood(Food food)
     {
-        if(chefState == ChefState.rest)
+        if(foodBring == null)
         {
             foodBring = food;
             chefUI.SetStatusBoxImg(foodBring);
+            return true;
         }
+        return false;
     }
 
     public Food ServeFood()
@@ -92,7 +96,7 @@ public class Chef : MonoBehaviour
         {
             if (chefState != ChefState.rest) return;
             foodBring = collision.GetComponent<CookItem>().GetDishFinish();
-            chefState = ChefState.bringFood;
+            //chefState = ChefState.bringFood;
         }
 
     }

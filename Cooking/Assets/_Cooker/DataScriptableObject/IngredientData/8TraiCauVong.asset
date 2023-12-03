@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2952284f7d9067b479b34d00df53f600, type: 3}
   m_Name: 8TraiCauVong
   m_EditorClassIdentifier: 
-  NameIngredient: "Tr\xE1i c\u1ED1c v\u1ED3ng"
-  SpriteIngredient: {fileID: 0}
+  NameIngredient: "Tr\xE1i c\u1EA7u v\u1ED3ng"
+  SpriteIngredient: {fileID: 21300000, guid: e3f88da0a73047843986527a25bec8a3, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: 0ba6b56560e922841b4a550c47be0285, type: 3}
   MaxStackSize: 3

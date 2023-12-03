@@ -8,12 +8,12 @@ public class Food : GameScriptableObject
     [SerializeField] private string nameFood;
     [SerializeField] private int cookingTime;
     [SerializeField] private int eatingTime;
-    [SerializeField] private List<Ingredient> ingredients;
+    [SerializeField] private List<ViTriIngredient> ingredients;
     [SerializeField] private Sprite spriteFood;
 
     public string NameFood => nameFood;
     public int CookingTime => cookingTime;
     public int EatingTime => eatingTime;
-    public List<Ingredient> Ingredients => ingredients;
+    public List<ViTriIngredient> VitriIngredients => ingredients;
     public Sprite SpriteFood => spriteFood;
 }

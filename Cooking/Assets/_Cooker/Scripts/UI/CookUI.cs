@@ -9,12 +9,13 @@ public class CookUI : MonoBehaviour
 {
     [SerializeField] GameAreaManager gameAreaManager;
     public static CookUI _instance;
+
     [SerializeField] GameObject UI;
     [SerializeField] Button exitBtn;
+
     public UnityEvent<bool> statusCookUI;
-    CookItem cookItem;
     
-    private void Start()
+    private void Awake()
     {
         Initialization();
     }
@@ -26,7 +27,6 @@ public class CookUI : MonoBehaviour
         }
         exitBtn.onClick.AddListener(() => SetStatusObj(false));
         statusCookUI.AddListener(SetStatusObj);
-        cookItem = gameAreaManager.CookItem;
     }
     public void SetStatusObj(bool status)
     {

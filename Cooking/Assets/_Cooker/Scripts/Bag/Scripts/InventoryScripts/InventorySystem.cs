@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using static Spine.Unity.Examples.SpineboyFootplanter;
 
 [System.Serializable]
 
@@ -54,5 +55,34 @@ public class InventorySystem
     {
         freeSlot = InventorySlots.FirstOrDefault(i => i.ItemData == null);
         return freeSlot == null ? false : true;
+    }
+    public bool DeleteItemSlot(Food food)
+    {
+        List<ViTriIngredient> ingredientInFood = food.VitriIngredients;
+        if (InventorySlots == null) return false;
+        
+        foreach (ViTriIngredient inventorySlot in ingredientInFood)
+        {
+            int vitri = inventorySlot.vitri;
+            inventorySlots[vitri].RemoveFromStack(1);
+        }
+        return true;
+    }
+    public Food CheckFood(Menu menuFood)
+    {
+        List<Food> foodInMenu = menuFood.Foods;
+        foreach(Food item in foodInMenu)
+        {
+            List<ViTriIngredient> ingredientInFood = item.VitriIngredients;
+            bool isTrueCongThuc = true;
+            foreach (ViTriIngredient inventorySlot in ingredientInFood)
+            {
+                int vitri = inventorySlot.vitri;
+                //if (vitri > inventorySlots.Count) return null;
+                if (inventorySlot.ingredient != inventorySlots[vitri].ItemData) isTrueCongThuc = false;
+            }
+            if (isTrueCongThuc) return item;
+        }
+        return null;
     }
 }

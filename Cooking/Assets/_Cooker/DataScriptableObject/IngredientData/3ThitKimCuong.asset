@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 3ThitKimCuong
   m_EditorClassIdentifier: 
   NameIngredient: "Th\u1ECBt kim c\u01B0\u01A1ng"
-  SpriteIngredient: {fileID: 21300000, guid: 1a85eba452060f547984e8854f6f7f77, type: 3}
+  SpriteIngredient: {fileID: 21300000, guid: 340766f9b75e4e14381149998482e1fe, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: b2be5dbbdb636da40ab058cb19160f1e, type: 3}
   MaxStackSize: 3

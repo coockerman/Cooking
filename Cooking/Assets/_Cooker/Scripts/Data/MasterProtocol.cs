@@ -43,4 +43,9 @@ public record SwitchToAutoMode : GameAction;
 public record SwitchToManualMode : GameAction;
 public record StartWaiting(Food foodOrder) :GameAction;
 
-
+[Serializable]
+public class ViTriIngredient
+{
+    public int vitri;
+    public Ingredient ingredient;
+}

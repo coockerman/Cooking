@@ -16,7 +16,8 @@ public class FridgeUI : MonoBehaviour
     [SerializeField] GameObject currentBtnIngredientPrefab;
 
     [SerializeField] Button exitBtn;
-    [SerializeField] Image imgIngredient;
+    [SerializeField] Image imgThuHoach;
+    [SerializeField] Image imgNguyenLieu;
     [SerializeField] Button btnGetIngredient;
     [SerializeField] TextMeshProUGUI nameIngredient;
     [SerializeField] TextMeshProUGUI thongtin1;
@@ -75,8 +76,12 @@ public class FridgeUI : MonoBehaviour
 
     void SetDataCurrent(Ingredient ingredient)
     {
-        imgIngredient.sprite = ingredient.SpriteIngredient;
+        imgThuHoach.sprite = ingredient.ThuHoachSprite;
+        imgThuHoach.color = Color.white;
+        imgNguyenLieu.sprite = ingredient.SpriteIngredient;
+        imgNguyenLieu.color = Color.white;
         nameIngredient.text = ingredient.NameIngredient;
+        btnGetIngredient.onClick.RemoveAllListeners();
         btnGetIngredient.onClick.AddListener(() => AddToBag(ingredient, 1));
     }
     void AddToBag(Ingredient ingredient, int sl)
@@ -86,7 +91,10 @@ public class FridgeUI : MonoBehaviour
     }
     void CleanFridgeUI()
     {
-        imgIngredient.sprite = null;
+        imgThuHoach.sprite = null;
+        imgThuHoach.color = Color.clear;
+        imgNguyenLieu.sprite = null;
+        imgNguyenLieu.color = Color.clear;
         nameIngredient.text = "";
         thongtin1.text = "";
         thongtin2.text = "";

@@ -16,6 +16,6 @@ MonoBehaviour:
   cookingTime: 5
   eatingTime: 5
   ingredients:
-  - {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
-  - {fileID: 11400000, guid: cdf8a9c9e3a0d5c42b89895e3659e1ff, type: 2}
-  spriteFood: {fileID: 21300000, guid: 2cfee97acb42a374d8e2add6bdf87768, type: 3}
+  - vitri: 0
+    ingredient: {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
+  spriteFood: {fileID: 21300000, guid: 1db08d78f39e9034c8989dd740b7f5cb, type: 3}

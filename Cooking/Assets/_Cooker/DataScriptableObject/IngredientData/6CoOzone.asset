@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 6CoOzone
   m_EditorClassIdentifier: 
   NameIngredient: "C\u1ECF Ozone"
-  SpriteIngredient: {fileID: 21300000, guid: 4313c1e710b122746a54176c4da158a5, type: 3}
+  SpriteIngredient: {fileID: 21300000, guid: eab3749f474c1d64e8e7ad23213b7952, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: 886a5f174f0f8da41822e043f3abd92e, type: 3}
   MaxStackSize: 3
