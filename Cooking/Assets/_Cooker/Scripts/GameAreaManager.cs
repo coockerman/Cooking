@@ -14,7 +14,7 @@ public class GameAreaManager : MonoBehaviour
     
     AreaState areaState;
     
-    //Lv
+    //Lv(day 1-3)
     int day = 0;
 
     //Nhân vật

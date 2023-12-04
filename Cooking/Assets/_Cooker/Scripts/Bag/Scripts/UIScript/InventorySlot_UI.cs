@@ -4,14 +4,15 @@ using TMPro;
 
 public class InventorySlot_UI : MonoBehaviour
 {
+    public InventorySlot AssignedInventorySlot => assignedInventorySlot;
+    public InventoryDisplay ParentDisplay { get; private set; }
+
     [SerializeField] Image itemSprite;
     [SerializeField] TextMeshProUGUI itemCount;
     [SerializeField] InventorySlot assignedInventorySlot;
 
     private Button button;
 
-    public InventorySlot AssignedInventorySlot => assignedInventorySlot;
-    public InventoryDisplay ParentDisplay { get; private set; }
     private void Awake()
     {
         ClearSlot();

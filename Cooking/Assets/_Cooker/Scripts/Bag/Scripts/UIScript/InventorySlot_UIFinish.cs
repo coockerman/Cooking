@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class InventorySlot_UIFinish : MonoBehaviour
 {
     public static InventorySlot_UIFinish Instance;
+    public UnityEvent GetFinishFood;
+
     [SerializeField] GameAreaManager gameAreaManager; 
     [SerializeField] InventoryHolder inventoryHolderSetup;
     [SerializeField] Image itemSprite;
@@ -17,7 +19,6 @@ public class InventorySlot_UIFinish : MonoBehaviour
     private Chef chef;
     private Menu menuFood;
 
-    public UnityEvent GetFinishFood;
     
     private void Awake()
     {
@@ -28,7 +29,6 @@ public class InventorySlot_UIFinish : MonoBehaviour
     private void OnEnable()
     {
         button.onClick.RemoveAllListeners();
-        Debug.Log("ccc");
     }
     private void Start()
     {

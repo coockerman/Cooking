@@ -5,7 +5,6 @@ using UnityEngine;
 public class FridgeItem : MonoBehaviour
 {
     List<Ingredient> ingredients;
-    Bag bag;
 
     public List<Ingredient> GetIngredients()
     {
@@ -15,15 +14,8 @@ public class FridgeItem : MonoBehaviour
     {
         this.ingredients = ingredients;
     }
-    public void SetBag(Bag bag)
-    {
-        this.bag = bag;
-    }
-    //public void AddToBag(Ingredient ingredient, int sl)
-    //{
-    //    ItemBag bagItem = new ItemBag(ingredient);
-    //    bag.AddItem(sl, bagItem);
-    //}
+    
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
 

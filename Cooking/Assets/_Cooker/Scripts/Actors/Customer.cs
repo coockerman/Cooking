@@ -31,7 +31,7 @@ public abstract class Customer : MonoBehaviour
     private void Start()
     {
         customerState = CustomerState.FindTable;
-        moveDuration = 1f;
+        moveDuration = 2.5f;
         timeWaitFood = 40f;
     }
     private void Update()

@@ -10,7 +10,7 @@ public class Food : GameScriptableObject
     [SerializeField] private int eatingTime;
     [SerializeField] private List<ViTriIngredient> ingredients;
     [SerializeField] private Sprite spriteFood;
-
+    public string KeChuyen;
     public string NameFood => nameFood;
     public int CookingTime => cookingTime;
     public int EatingTime => eatingTime;

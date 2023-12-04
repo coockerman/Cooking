@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class CookUI : MonoBehaviour
 {
-    [SerializeField] GameAreaManager gameAreaManager;
     public static CookUI _instance;
 
+    [SerializeField] GameAreaManager gameAreaManager;
     [SerializeField] GameObject UI;
     [SerializeField] Button exitBtn;
 

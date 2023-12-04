@@ -12,8 +12,10 @@ public class ChefMovement : MonoBehaviour
     public bool IsWork { get { return isWork; } set { isWork = value; } }
 
     Rigidbody2D rb2d;
+
     float moveHorizontal;
     float moveVertical;
+
     Vector2 lastMove;
 
 

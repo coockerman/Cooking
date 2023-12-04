@@ -16,10 +16,11 @@ public class Chef : MonoBehaviour
 {
     [SerializeField] Food foodBring;
     public Food FoodBring { get { return foodBring; } }
+
     ChefMovement chefMovement;
     ChefUI chefUI;
-    ChefState chefState;
 
+    ChefState chefState;
 
     private void Start()
     {

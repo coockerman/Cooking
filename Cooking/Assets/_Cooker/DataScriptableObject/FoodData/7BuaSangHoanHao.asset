@@ -20,4 +20,7 @@ MonoBehaviour:
     ingredient: {fileID: 11400000, guid: 9912813529d599544b7bfcacd4daaf37, type: 2}
   - vitri: 1
     ingredient: {fileID: 11400000, guid: 2ca21b266941dc34bbb6cefd7c04fc07, type: 2}
+  - vitri: 2
+    ingredient: {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
   spriteFood: {fileID: 21300000, guid: 2a711512cab99c441bac0db9cabceaf2, type: 3}
+  KeChuyen: 

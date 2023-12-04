@@ -8,16 +8,21 @@ using UnityEngine.UI;
 
 public class WashUI : MonoBehaviour
 {
+    public static WashUI _instance;
+    public UnityEvent<bool> statusWashUI;
+
+
+    [SerializeField] Ingredient plate;
+    [SerializeField] InventoryHolder inventoryHolder;
     [SerializeField] List<Stain> listStains;
     [SerializeField] GameAreaManager gameAreaManager;
     [SerializeField] GameObject UIWash;
     [SerializeField] Button exitBtn;
-    public static WashUI _instance;
-    public UnityEvent<bool> statusWashUI;
-    WashItem washItem;
-
-    bool isClosed;
     [SerializeField] float timeDelayClosed;
+
+    WashItem washItem;
+    bool isClosed;
+
     void Start()
     {
         Initialization();
@@ -85,7 +90,7 @@ public class WashUI : MonoBehaviour
     }
     void FinishWash()
     {
-        
+        inventoryHolder.InventorySystem.AddToInventory(plate, 1);
     }
     
 }
