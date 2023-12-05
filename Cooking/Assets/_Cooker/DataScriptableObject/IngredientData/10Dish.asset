@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2952284f7d9067b479b34d00df53f600, type: 3}
   m_Name: 10Dish
   m_EditorClassIdentifier: 
-  nameIngredient: Dish
-  spriteIngredient: {fileID: 21300000, guid: abe5c923921e707498690dcdb26d829e, type: 3}
+  NameIngredient: "\u0110\u0129a"
+  SpriteIngredient: {fileID: 21300000, guid: 1de45c0c93468b8499a881f02caa486c, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: 1de45c0c93468b8499a881f02caa486c, type: 3}
+  MaxStackSize: 10

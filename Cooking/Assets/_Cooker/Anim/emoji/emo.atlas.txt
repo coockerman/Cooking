@@ -1,0 +1,21 @@
+emo.png
+size:124,72
+filter:Linear,Linear
+pma:true
+Layer 1
+bounds:2,8,60,50
+offsets:1,1,62,52
+rotate:90
+angdi
+bounds:54,2,31,32
+offsets:1,1,33,34
+disgust
+bounds:87,3,31,32
+offsets:1,1,33,34
+rotate:90
+eating
+bounds:54,36,33,32
+offsets:1,1,35,34
+satisfy face
+bounds:89,36,33,32
+offsets:1,1,35,34

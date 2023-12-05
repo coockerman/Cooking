@@ -1,0 +1,841 @@
+fileFormatVersion: 2
+guid: 07ab06e4df267ab41b5adf4af284d8da
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638372075452954126
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: bg
+    originalName: 
+    pivot: {x: 0.49937266, y: -0.002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 512
+      width: 797
+      height: 500
+    spriteID: a93f04de1e204124f88906f22e77f5a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 512}
+  - name: art boss
+    originalName: 
+    pivot: {x: 3.6021507, y: -1.047619}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 840
+      y: 1020
+      width: 93
+      height: 105
+    spriteID: 9bf1c50d22b060d4bb2afe2e8c7dba54
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 840, y: 1020}
+  - name: art sanji
+    originalName: 
+    pivot: {x: -2.6000001, y: -0.5872093}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 747
+      y: 1020
+      width: 85
+      height: 172
+    spriteID: 550366a973de38044bc65de60748831f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 747, y: 1020}
+  - name: smoke sanji
+    originalName: 
+    pivot: {x: -15.789474, y: -14.333333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 992
+      y: 1103
+      width: 19
+      height: 18
+    spriteID: 891b33c88a503d4439fc4cbee6b8b425
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 992, y: 1103}
+  - name: smoke sanji 2
+    originalName: 
+    pivot: {x: -15.699999, y: -13.500001}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 992
+      y: 1075
+      width: 20
+      height: 20
+    spriteID: 2565126b76cdf99458b0900736d100e1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 992, y: 1075}
+  - name: thoai
+    originalName: 
+    pivot: {x: 4.010526, y: -3.7333333}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 840
+      y: 1133
+      width: 95
+      height: 60
+    spriteID: d8fc2a7fd591ab4438b7874774d6438a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 840, y: 1133}
+  - name: thoai Copy
+    originalName: 
+    pivot: {x: 4.11579, y: -4.3999996}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 840
+      y: 1201
+      width: 95
+      height: 60
+    spriteID: dd2eabfd76e1ee046828b0ff978a06d8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 840, y: 1201}
+  - name: o
+    originalName: 
+    pivot: {x: 0.49931976, y: -0.10895885}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1020
+      width: 735
+      height: 413
+    spriteID: 68da6b8253e6cd947bda3c4e5c916495
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1020}
+  - name: vien
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 800
+      height: 500
+    spriteID: 0671f2661141d9f4d9d4cb6fd5778c73
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: X
+    originalName: 
+    pivot: {x: -7.340425, y: -9.489362}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 941
+      y: 1020
+      width: 47
+      height: 47
+    spriteID: 6cc0b7bfbbd6e394797c3af26526b0b5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 941, y: 1020}
+  - name: arrow
+    originalName: 
+    pivot: {x: -0.27868864, y: -7.0638294}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 943
+      y: 1133
+      width: 61
+      height: 47
+    spriteID: 5dc21aa32656a644d867bc19b170a294
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 943, y: 1133}
+  - name: energy bar
+    originalName: 
+    pivot: {x: 0.50000006, y: -8.913043}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1441
+      width: 382
+      height: 23
+    spriteID: e33a1da95e067864aa4c0960f131638d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1441}
+  - name: Layer 1
+    originalName: 
+    pivot: {x: 0.32258072, y: -13.0625}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 932
+      y: 1269
+      width: 62
+      height: 16
+    spriteID: 7f2d9c5609fd52740a157eea26f1e0bc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 932, y: 1269}
+  - name: down arrow Copy
+    originalName: 
+    pivot: {x: -0.34782574, y: -8.807693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 996
+      y: 1020
+      width: 23
+      height: 26
+    spriteID: b198b041e53a6284d9e7ad02363314a5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 996, y: 1020}
+  - name: pan
+    originalName: 
+    pivot: {x: 0.17500003, y: -6.0000005}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 840
+      y: 1323
+      width: 120
+      height: 18
+    spriteID: bb24eab2256c80945a34d4e15aa55278
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 840, y: 1323}
+  - name: Layer 4
+    originalName: 
+    pivot: {x: 0.17391287, y: -2.1016948}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 943
+      y: 1201
+      width: 46
+      height: 59
+    spriteID: 77901e637e83e1445b73e4f075abb58a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 943, y: 1201}
+  - name: buk
+    originalName: 
+    pivot: {x: 9.023255, y: -9.489362}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 941
+      y: 1075
+      width: 43
+      height: 47
+    spriteID: 573f6a43b76c7df43b07aa56b09819ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 941, y: 1075}
+  - name: time
+    originalName: 
+    pivot: {x: -3.0476189, y: -9.717391}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 840
+      y: 1269
+      width: 84
+      height: 46
+    spriteID: c4b068cdda6af5f4d90f6ee3071de0cf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 840, y: 1269}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 1
+    guid: 1259326108
+    name: bg
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: bg
+      frameIndex: 0
+      cellRect:
+        x: 2
+        y: 1
+        width: 797
+        height: 500
+      spriteId: a93f04de1e204124f88906f22e77f5a5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 2025645370
+    name: art boss
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: art boss
+      frameIndex: 0
+      cellRect:
+        x: 65
+        y: 110
+        width: 93
+        height: 105
+      spriteId: 9bf1c50d22b060d4bb2afe2e8c7dba54
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1772385139
+    name: art sanji
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: art sanji
+      frameIndex: 0
+      cellRect:
+        x: 621
+        y: 101
+        width: 85
+        height: 172
+      spriteId: 550366a973de38044bc65de60748831f
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: -121022988
+    name: smoke sanji
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: smoke sanji
+      frameIndex: 0
+      cellRect:
+        x: 700
+        y: 258
+        width: 19
+        height: 18
+      spriteId: 891b33c88a503d4439fc4cbee6b8b425
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: 1543099807
+    name: smoke sanji 2
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: smoke sanji 2
+      frameIndex: 0
+      cellRect:
+        x: 714
+        y: 270
+        width: 20
+        height: 20
+      spriteId: 2565126b76cdf99458b0900736d100e1
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -358959407
+    name: thoai
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: thoai
+      frameIndex: 0
+      cellRect:
+        x: 19
+        y: 224
+        width: 95
+        height: 60
+      spriteId: d8fc2a7fd591ab4438b7874774d6438a
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 7
+    guid: 153294697
+    name: thoai Copy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: thoai Copy
+      frameIndex: 0
+      cellRect:
+        x: 9
+        y: 264
+        width: 95
+        height: 60
+      spriteId: dd2eabfd76e1ee046828b0ff978a06d8
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: 1666775407
+    name: o
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: o
+      frameIndex: 0
+      cellRect:
+        x: 33
+        y: 45
+        width: 735
+        height: 413
+      spriteId: 68da6b8253e6cd947bda3c4e5c916495
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 9
+    guid: 1195167689
+    name: vien
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: vien
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 800
+        height: 500
+      spriteId: 0671f2661141d9f4d9d4cb6fd5778c73
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 10
+    guid: 1666795636
+    name: X
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: X
+      frameIndex: 0
+      cellRect:
+        x: 745
+        y: 446
+        width: 47
+        height: 47
+      spriteId: 6cc0b7bfbbd6e394797c3af26526b0b5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 11
+    guid: 308325358
+    name: arrow
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: arrow
+      frameIndex: 0
+      cellRect:
+        x: 417
+        y: 332
+        width: 61
+        height: 47
+      spriteId: 5dc21aa32656a644d867bc19b170a294
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 12
+    guid: 159108827
+    name: energy bar
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: energy bar
+      frameIndex: 0
+      cellRect:
+        x: 209
+        y: 205
+        width: 382
+        height: 23
+      spriteId: e33a1da95e067864aa4c0960f131638d
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 14
+    guid: 1317222742
+    name: Layer 1
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Layer 1
+      frameIndex: 0
+      cellRect:
+        x: 380
+        y: 209
+        width: 62
+        height: 16
+      spriteId: 7f2d9c5609fd52740a157eea26f1e0bc
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 16
+    guid: -835834884
+    name: down arrow Copy
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: down arrow Copy
+      frameIndex: 0
+      cellRect:
+        x: 408
+        y: 229
+        width: 23
+        height: 26
+      spriteId: b198b041e53a6284d9e7ad02363314a5
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 18
+    guid: 1445926449
+    name: pan
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: pan
+      frameIndex: 0
+      cellRect:
+        x: 379
+        y: 108
+        width: 120
+        height: 18
+      spriteId: bb24eab2256c80945a34d4e15aa55278
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 22
+    guid: 1317223913
+    name: Layer 4
+    layerFlags: 19
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Layer 4
+      frameIndex: 0
+      cellRect:
+        x: 392
+        y: 124
+        width: 46
+        height: 59
+      spriteId: 77901e637e83e1445b73e4f075abb58a
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 31
+    guid: 1911495219
+    name: buk
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: buk
+      frameIndex: 0
+      cellRect:
+        x: 12
+        y: 446
+        width: 43
+        height: 47
+      spriteId: 573f6a43b76c7df43b07aa56b09819ae
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 32
+    guid: -1754472299
+    name: time
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: time
+      frameIndex: 0
+      cellRect:
+        x: 656
+        y: 447
+        width: 84
+        height: 46
+      spriteId: c4b068cdda6af5f4d90f6ee3071de0cf
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 800, y: 500}

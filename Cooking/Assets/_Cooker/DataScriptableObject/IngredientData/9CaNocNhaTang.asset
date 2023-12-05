@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2952284f7d9067b479b34d00df53f600, type: 3}
   m_Name: 9CaNocNhaTang
   m_EditorClassIdentifier: 
-  nameIngredient: "C\xE1 n\xF3c nh\xE0 t\xE1ng"
-  spriteIngredient: {fileID: 21300000, guid: 859c960d7e6486749a2f65d243d2e9f1, type: 3}
+  NameIngredient: "C\xE1 n\xF3c nh\xE0 t\xE1ng"
+  SpriteIngredient: {fileID: 21300000, guid: 780a164f1b390624eb80e1319cfb84a6, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: 027940cfdb9bbed499a9c7e1e629d35b, type: 3}
+  MaxStackSize: 3

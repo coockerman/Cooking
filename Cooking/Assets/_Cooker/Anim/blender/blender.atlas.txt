@@ -1,0 +1,6 @@
+blender.png
+size:24,52
+filter:Linear,Linear
+pma:true
+smol blender
+bounds:2,2,18,46

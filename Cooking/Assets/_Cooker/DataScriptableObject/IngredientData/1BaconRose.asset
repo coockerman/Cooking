@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2952284f7d9067b479b34d00df53f600, type: 3}
   m_Name: 1BaconRose
   m_EditorClassIdentifier: 
-  nameIngredient: BaconRose
-  spriteIngredient: {fileID: 21300000, guid: c81fc61e5cb91d44eae14d6cfab777d0, type: 3}
+  NameIngredient: BaconRose
+  SpriteIngredient: {fileID: 21300000, guid: ed2b8242ac62e09418c28d4b31a3d790, type: 3}
+  ThuHoachSprite: {fileID: 21300000, guid: 14d2ada5488e14f4893ef6c4039b2464, type: 3}
+  MaxStackSize: 3

@@ -1,146 +1,265 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Akka.Actor;
 using UnityEngine;
-
+public enum AreaState
+{
+    StartGame,
+    OnSpawn,
+    InGame,
+    EndGame,
+}
 public class GameAreaManager : MonoBehaviour
 {
-
-    [SerializeField] private int customerEachRound;
-    [SerializeField] private int totalChefs;
-    [SerializeField] private int totalChefCooker;
-    [SerializeField] private int totalDishWasher;
-    [SerializeField] private int totalChefPrepare;
     
-    [SerializeField] private GameObject cookerPrefab;
-    ChefCooker chefCooker;
+    AreaState areaState;
+    
+    //Lv(day 1-3)
+    int day = 0;
 
-    [SerializeField] private GameObject chefPreparePrefab;
-    ChefPrepare chefPrepare;
-
+    //Nhân vật
     [SerializeField] private GameObject boxHuman;
-    [SerializeField] private Customer customerPrefabs;
-    
+    [SerializeField] private GameObject boxUIHuman;
+
+    [SerializeField] GameObject chefPrefab;
+    [SerializeField] GameObject chefUIPrefab;
+
+    [SerializeField] GameObject chefCookerPrefab;
+    [SerializeField] GameObject chefPreparePrefab;
+    [SerializeField] GameObject dishWasherPrefab;
+
+    Chef chef;
+    ChefUI chefUI;
+
+    ChefCooker chefCooker;
+    ChefPrepare chefPrepare;
+    DishWasher dishWasher;
+
+    public Chef Chef { get { return chef; } set { chef = value; } }
+
+    //Menu
     [SerializeField] List<Menu> MenuRestaurant;
-    [SerializeField] List<Ingredient> ListIngredient;
+    [SerializeField] List<Menu> MenuRestaurantSpecial;
+    private Menu menuByDay;
+    private Menu menuSpecialByDay;
+    public Menu MenuByDay => menuByDay;
+    public Menu MenuSpecialByDay => menuSpecialByDay;
+
+    //Nguyên liệu(default)
+    [SerializeField] List<Ingredient> listIngredient;
+    public List<Ingredient> ListIngredient => listIngredient;
+
+    //Đánh giá
+    [SerializeField] private EvaluateUI evaluateUI;
+
+    //Bàn chờ
 
 
-    private readonly ActorSystem _gameActorSystem = ActorSystem.Create("CookGameActorSystem");
-    private IActorRef _gameManager;
+    //Khách hàng
+    [SerializeField] private GameObject boxCustomer;
+    [SerializeField] private GameObject boxCustomerUI;
+    [SerializeField] float timeWaitSpawn = 5;
+    private List<Customer> spawnedCustomers = new List<Customer>();
+    [SerializeField] private Customer[] customerPrefabs;
+    [SerializeField] GameObject CustomerUIPrefab;
 
-    void Start()
+
+    //Nồi nấu
+    [SerializeField] private GameObject boxItem;
+    [SerializeField] private GameObject cookItemPrefab;
+    private CookItem cookItem;
+    public CookItem CookItem => cookItem;
+
+    //Tủ lạnh
+    [SerializeField] private GameObject fridgeItemPrefab;
+    private FridgeItem fridgeItem;
+    public FridgeItem FridgeItem => fridgeItem;
+
+    //Bồn rửa
+    [SerializeField] private GameObject washItemPrefab;
+    private WashItem washItem;
+    public WashItem WashItem => washItem;
+
+    //Ba lô
+    InventoryHolder inventoryHolder;
+    public InventoryHolder InventoryHolder { get { return inventoryHolder; } set {  inventoryHolder = value; } }
+
+    //Đĩa bẩn
+    [SerializeField] private GameObject dirtyPlateItemPrefab;
+    private DirtyPlateItem dirtyPlateItem;
+
+    //Bàn ăn
+    [SerializeField] private GameObject dinnerTablePrefab;
+    private DinnerTable dinnerTable;
+    public DinnerTable DinnerTable => dinnerTable;
+
+    //Cửa ra
+    [SerializeField] GameObject doorOut;
+    public GameObject DoorOut => doorOut;
+    void Awake()
     {
-        _gameManager = _gameActorSystem.ActorOf(GameAreaManagerActor.Props(), "GameManagerActor");
-        var initGameData = new InitializeGameData(customerEachRound, totalChefs, totalChefCooker, totalDishWasher, totalChefPrepare, true);
-        _gameManager.Tell(new InitializeGame(initGameData, this));
-        
+        areaState = AreaState.StartGame;
+        if (day == 0) day = 1;
+        LoadStartGame(day);
     }
    
     
     void Update()
     {
-        
-    }
-
-    public void OnInitializeGame(object o)
-    {
-        var initGameData = (InitializeGameData)o;
-        if (!initGameData.IsSuccess)
+        if(areaState == AreaState.StartGame)
         {
-            Debug.Log("Init game fail");
-            return;
+            areaState = AreaState.OnSpawn;
         }
-        
-        //TODO: 1. Spawn prefab for each number of objectives below
-        var maxCustomers = initGameData.NCustomer;
-        var totalChefs = initGameData.NChef;
-        var totalChefCooker = initGameData.NChefCooker;
-        var totalChefPrepare = initGameData.NChefPrepare;
-        var totalDishWashers = initGameData.NDishWasher;
-
-        var allIngredients = LoadAllIngredients();
-        
-        _gameManager.Tell(new PrepareIngredients(allIngredients));
-        _gameManager.Tell(new StartCooking());//TODO
-        _gameManager.Tell(new OpenRestaurant(MenuRestaurant,customerPrefabs));
-    }
-    
-    private List<Ingredient> LoadAllIngredients()
-    {
-        return ListIngredient;
-    }
-
-    private void SpawnObjects(GameObject prefabs, int count)
-    {
-        Debug.Log(count);
-        for (int i = 0; i < count; i++)
+        else if(areaState == AreaState.OnSpawn)
         {
-            Debug.Log("a");
-            Instantiate(prefabs, boxHuman.transform);
-            Debug.Log(2);
+            StartCoroutine(SpawnCustomers());
+            areaState = AreaState.InGame;
+        }
+        else if(areaState == AreaState.InGame) 
+        {
+
+        }
+        else if(areaState == AreaState.EndGame)
+        {
+
         }
     }
-    private void OnStartGame(object o)
+    void LoadStartGame(int day)
     {
-        Debug.Log("Game started");
+    //loadNhanVat
+        //loadChef
+        chef = Instantiate(chefPrefab, boxHuman.transform).GetComponent<Chef>();
+        chefUI = Instantiate(chefUIPrefab, boxUIHuman.transform).GetComponent<ChefUI>();
+
+        chef.SetChefUI(chefUI);
+        chefUI.SetChefHover(chef);
+
+        chefCooker = Instantiate(chefCookerPrefab, boxHuman.transform).GetComponent<ChefCooker>();
+        chefPrepare = Instantiate(chefPreparePrefab, boxHuman.transform).GetComponent<ChefPrepare>();
+        dishWasher = Instantiate(dishWasherPrefab, boxHuman.transform).GetComponent<DishWasher>();
+
+        //load bag
+        inventoryHolder = gameObject.GetComponent<InventoryHolder>();
+
+        //loadMenu
+        menuByDay = MenuRestaurant[day - 1];
+        menuSpecialByDay = MenuRestaurantSpecial[day - 1];
+
+        //load nồi nấu
+        cookItem = Instantiate(cookItemPrefab, boxItem.transform).GetComponent<CookItem>();
+
+        //load tủ lạnh
+        fridgeItem = Instantiate(fridgeItemPrefab, boxItem.transform).GetComponent<FridgeItem>();
+        fridgeItem.SetIngredients(listIngredient);
+
+        //load bồn rửa
+        washItem = Instantiate(washItemPrefab, boxItem.transform).GetComponent<WashItem>();
+
+        
+
+        //load đĩa bẩn
+        dirtyPlateItem = Instantiate(dirtyPlateItemPrefab, boxItem.transform).GetComponent<DirtyPlateItem>();
+
+        //load dinner Table
+        dinnerTable = Instantiate(dinnerTablePrefab, boxItem.transform).GetComponent<DinnerTable>();
     }
-
-}
-
-class GameAreaManagerActor : ReceiveActor
-{
-    private readonly int _maxWaitingTime = 3;
-    private int dayNow = 0;
-    private bool _isGameStarted;
-    private IActorRef _chefCooker = Context.ActorOf(ChefCookerActor.Props(), "ChefCookerActor");
-    private IActorRef _dishWasher = Context.ActorOf(DishWasherActor.Props(), "DishWasherActor");
-    private IActorRef _chefPrepare = Context.ActorOf(ChefPrepareActor.Props(), "ChefPrepareActor");
-    private IActorRef _customer = Context.ActorOf(CustomerActor.Props(), "CustomerActor");
-
-    public static Props Props()
+    private IEnumerator SpawnCustomers()
     {
-        return Akka.Actor.Props.Create(() => new GameAreaManagerActor());
-    }
-
-    public GameAreaManagerActor()
-    {
-        Receive<GameAction>(message =>
+        while (true)
         {
-            switch (message)
+            if (dinnerTable.CheckTable())
             {
-                case InitializeGame action:
-                    
-                    if (!_isGameStarted)
-                    {
-                        _isGameStarted = true;
-                        action.GameManager.OnInitializeGame(action.InitData);
-                    }
-                    else
-                    {
-                        var failData = new InitializeGameData(0, 0, 0, 0, 0, false);
-                        action.GameManager.OnInitializeGame(failData);
-                    }
-                    break;
+                Customer randomCustomerPrefab = GetRandomCustomerPrefab();
+                GameObject customerObject = Instantiate(randomCustomerPrefab.gameObject, boxCustomer.transform);
+                GameObject customerUIObject = Instantiate(CustomerUIPrefab, boxCustomerUI.transform);
 
-                case OpenRestaurant openRes:
-                    var todayMenu = openRes.MenuByDay;
-                    var selectedFoodFromMenu = new List<Task> { _customer.Ask(new SelectSomeFoods(todayMenu, dayNow), TimeSpan.FromSeconds(_maxWaitingTime)) };
-                    Task.WhenAll(selectedFoodFromMenu).PipeTo(_chefCooker, Self);
-                    break;
-                
-                  case PrepareIngredients prepareIngredients:
-                    //TODO: 
-                      break;
-                
-                case SwitchToAutoMode _:
-                    break;
+                // Lấy component Customer từ GameObject
+                Customer customerComponent = customerObject.GetComponent<Customer>();
+                CustomerUIPrefab customerUI = customerUIObject.GetComponent<CustomerUIPrefab>();
+                customerComponent.gameAreaManager = this;
+                customerComponent.SetCustomerUIPrefab(customerUI);
 
-                case SwitchToManualMode _:
-                    break;
+                customerUI.SetCustomerHover(customerComponent);
+
+                // Thêm khách hàng vào danh sách
+                spawnedCustomers.Add(customerComponent);
             }
-        });
+            else
+            {
+                yield return null; // Cho đến khi được gọi lại để tiếp tục spawn
+            }
+
+            yield return new WaitForSeconds(timeWaitSpawn);
+        }
     }
-    
+
+    private Customer GetRandomCustomerPrefab()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, customerPrefabs.Length);
+        return customerPrefabs[randomIndex];
+    }
+
+    // Phương thức để xoá khách hàng khỏi danh sách khi rời đi
+    public void RemoveCustomer(Customer customer)
+    {
+        spawnedCustomers.Remove(customer);
+        DinnerTable.OutTable(customer);
+    }
+
 }
+
+//class GameAreaManagerActor : ReceiveActor
+//{
+//    private readonly int _maxWaitingTime = 3;
+//    private int dayNow = 0;
+//    private bool _isGameStarted;
+//    private IActorRef _chefCooker = Context.ActorOf(ChefCookerActor.Props(), "ChefCookerActor");
+//    private IActorRef _dishWasher = Context.ActorOf(DishWasherActor.Props(), "DishWasherActor");
+//    private IActorRef _chefPrepare = Context.ActorOf(ChefPrepareActor.Props(), "ChefPrepareActor");
+//    private IActorRef _customer = Context.ActorOf(CustomerActor.Props(), "CustomerActor");
+
+//    public static Props Props()
+//    {
+//        return Akka.Actor.Props.Create(() => new GameAreaManagerActor());
+//    }
+
+//    public GameAreaManagerActor()
+//    {
+//        Receive<GameAction>(message =>
+//        {
+//            switch (message)
+//            {
+//                case InitializeGame action:
+                    
+//                    if (!_isGameStarted)
+//                    {
+//                        _isGameStarted = true;
+//                        action.GameManager.OnInitializeGame(action.InitData);
+//                    }
+//                    else
+//                    {
+//                        var failData = new InitializeGameData(0, 0, 0, 0, 0, false);
+//                        action.GameManager.OnInitializeGame(failData);
+//                    }
+//                    break;
+
+//                case OpenRestaurant openRes:
+//                    var todayMenu = openRes.MenuByDay;
+//                    var selectedFoodFromMenu = new List<Task> { _customer.Ask(new SelectSomeFoods(todayMenu, dayNow), TimeSpan.FromSeconds(_maxWaitingTime)) };
+//                    Task.WhenAll(selectedFoodFromMenu).PipeTo(_chefCooker, Self);
+//                    break;
+                
+//                  case PrepareIngredients prepareIngredients:
+//                    //TODO: 
+//                      break;
+                
+//                case SwitchToAutoMode _:
+//                    break;
+
+//                case SwitchToManualMode _:
+//                    break;
+//            }
+//        });
+//    }
+    
+//}

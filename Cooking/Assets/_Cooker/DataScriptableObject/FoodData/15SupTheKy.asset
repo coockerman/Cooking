@@ -16,13 +16,22 @@ MonoBehaviour:
   cookingTime: 8
   eatingTime: 5
   ingredients:
-  - {fileID: 11400000, guid: 9912813529d599544b7bfcacd4daaf37, type: 2}
-  - {fileID: 11400000, guid: 2ca21b266941dc34bbb6cefd7c04fc07, type: 2}
-  - {fileID: 11400000, guid: ac0cac964b933a848a0786a84cb81eb1, type: 2}
-  - {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
-  - {fileID: 11400000, guid: debc0e2ffa7ad3d4ea70c352c62b15d1, type: 2}
-  - {fileID: 11400000, guid: 6e7b720b97484ee4a9bd5aecbea58b5e, type: 2}
-  - {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
-  - {fileID: 11400000, guid: fe16258d115804648b2ec8fec3ba7f62, type: 2}
-  - {fileID: 11400000, guid: 9d26a23e3cc244148ba3c6456bd9dec6, type: 2}
-  spriteFood: {fileID: 21300000, guid: 1f3cfcc37cddc8c49b4203201f93a9c1, type: 3}
+  - vitri: 0
+    ingredient: {fileID: 11400000, guid: 9912813529d599544b7bfcacd4daaf37, type: 2}
+  - vitri: 1
+    ingredient: {fileID: 11400000, guid: 2ca21b266941dc34bbb6cefd7c04fc07, type: 2}
+  - vitri: 2
+    ingredient: {fileID: 11400000, guid: ac0cac964b933a848a0786a84cb81eb1, type: 2}
+  - vitri: 3
+    ingredient: {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
+  - vitri: 4
+    ingredient: {fileID: 11400000, guid: debc0e2ffa7ad3d4ea70c352c62b15d1, type: 2}
+  - vitri: 5
+    ingredient: {fileID: 11400000, guid: 6e7b720b97484ee4a9bd5aecbea58b5e, type: 2}
+  - vitri: 6
+    ingredient: {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
+  - vitri: 7
+    ingredient: {fileID: 11400000, guid: fe16258d115804648b2ec8fec3ba7f62, type: 2}
+  - vitri: 8
+    ingredient: {fileID: 11400000, guid: 9d26a23e3cc244148ba3c6456bd9dec6, type: 2}
+  spriteFood: {fileID: 21300000, guid: ef46fa6cdb300a14aba540f05db9a8e6, type: 3}

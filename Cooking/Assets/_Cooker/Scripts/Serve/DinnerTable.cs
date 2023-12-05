@@ -5,8 +5,10 @@ using UnityEngine;
 public class DinnerTable : MonoBehaviour
 {
     public static DinnerTable Instance;
-
     public List<Table> Tables;
+
+    List<Table> listTablesEmpty;
+
     private void Awake()
     {
         if (Instance == null)
@@ -14,34 +16,54 @@ public class DinnerTable : MonoBehaviour
             Instance = this;
         }
     }
-    public Table ChoseTable()
+    public bool CheckTable()
     {
-        List<Table> emptyTables = new List<Table>();
-
-        // Tìm tất cả các bàn trống
         foreach (Table table in Tables)
         {
-            if (table.Empty)
+            if (table.Customer == null)
             {
-                emptyTables.Add(table);
+                return true;
+            }
+        }
+        return false;
+    }
+    public Table ChoseTable(Customer customer)
+    {
+        listTablesEmpty = new List<Table>();
+        foreach (Table table in Tables)
+        {
+            if (table.Customer == null)
+            {
+                listTablesEmpty.Add(table);
             }
         }
 
-        // Nếu có ít nhất một bàn trống, chọn một bàn ngẫu nhiên từ danh sách
-        if (emptyTables.Count > 0)
+        if (listTablesEmpty.Count > 0)
         {
-            int randomIndex = Random.Range(0, emptyTables.Count);
-            Table randomEmptyTable = emptyTables[randomIndex];
+            int randomIndex = Random.Range(0, listTablesEmpty.Count);
+            Table randomEmptyTable = listTablesEmpty[randomIndex];
 
-            // Đánh dấu bàn đã được sử dụng
-            randomEmptyTable.Empty = false;
+            // Gán khách hàng cho bàn
+            randomEmptyTable.Customer = customer;
 
-            // Trả về bàn đã chọn
             return randomEmptyTable;
         }
 
-        // Nếu không có bàn trống, trả về null
         return null;
     }
+    public Table OutTable(Customer customer)
+    {
+        foreach (Table table in Tables)
+        {
+            if (table.Customer == customer)
+            {
+                // Đưa khách hàng ra khỏi bàn
+                table.Customer = null;
 
+                return table;
+            }
+        }
+
+        return null;
+    }
 }
