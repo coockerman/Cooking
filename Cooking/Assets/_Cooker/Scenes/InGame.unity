@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &179375904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1149,7 +1150,12 @@ MonoBehaviour:
   statusMenuUI:
     m_PersistentCalls:
       m_Calls: []
-  colorDark: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 0.87058824}
+    m_CallsDirty: 1
+  colorDark:
+    r: 0.2735849
+    g: 0.2735849
+    b: 0.2735849
+    a: 0.87058824
   gameAreaManager: {fileID: 455757130}
   imgx2: {fileID: 766785045}
   imgx1: {fileID: 105750774}
@@ -1162,6 +1168,8 @@ MonoBehaviour:
   keChuyen: {fileID: 1409260194}
   UI: {fileID: 608347868}
   exitBtn: {fileID: 1263575536}
+  menu: {fileID: 0}
+  chose: 0
 --- !u!224 &274770755 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 798742962358138550, guid: 384e73b3c48359b429f3bb53889474a4, type: 3}
@@ -1367,6 +1375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &340789693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2275,48 +2284,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789337783891f2a4683388adb143ee21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxHuman: {fileID: 280290940}
-  boxUIHuman: {fileID: 1118229544}
-  chefPrefab: {fileID: 5452080666645819475, guid: 65c95da56752b7d409105c27aad9ad28, type: 3}
-  chefUIPrefab: {fileID: 3385801273308487529, guid: ce7d2f4966649d1428bb1ecbaff9a3a7, type: 3}
-  chefCookerPrefab: {fileID: 435688238210764367, guid: 6f9eb90519517cc4ca07c24f42761a99, type: 3}
+  customerEachRound: 0
+  totalChefs: 0
+  totalChefCooker: 0
+  totalDishWasher: 0
+  totalChefPrepare: 0
+  cookerPrefab: {fileID: 0}
   chefPreparePrefab: {fileID: 3967613038240999017, guid: a6ce7248950b872458537aca0753f70f, type: 3}
-  dishWasherPrefab: {fileID: 903361897301204137, guid: 144191acfd1cd4143a3927cd34d15517, type: 3}
+  boxHuman: {fileID: 280290940}
+  customerPrefabs: {fileID: 0}
   MenuRestaurant:
   - {fileID: 11400000, guid: 3c366355ebc3e484797176694f5de937, type: 2}
   - {fileID: 11400000, guid: 785bfb1e63f882647b2f8169c8869341, type: 2}
   - {fileID: 11400000, guid: cc955feabbc841248a359533ba63558e, type: 2}
-  MenuRestaurantSpecial:
-  - {fileID: 11400000, guid: c8dcd8610346b2344b9b7cb9e5be367b, type: 2}
-  - {fileID: 11400000, guid: abce7dc80d74ef44e9dc29a795325fb0, type: 2}
-  - {fileID: 11400000, guid: 0c9ed0cac21f34041bb68f49a7ee57fc, type: 2}
-  listIngredient:
-  - {fileID: 11400000, guid: 9912813529d599544b7bfcacd4daaf37, type: 2}
-  - {fileID: 11400000, guid: 2ca21b266941dc34bbb6cefd7c04fc07, type: 2}
-  - {fileID: 11400000, guid: ac0cac964b933a848a0786a84cb81eb1, type: 2}
-  - {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
-  - {fileID: 11400000, guid: debc0e2ffa7ad3d4ea70c352c62b15d1, type: 2}
-  - {fileID: 11400000, guid: 6e7b720b97484ee4a9bd5aecbea58b5e, type: 2}
-  - {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
-  - {fileID: 11400000, guid: fe16258d115804648b2ec8fec3ba7f62, type: 2}
-  - {fileID: 11400000, guid: 9d26a23e3cc244148ba3c6456bd9dec6, type: 2}
-  evaluateUI: {fileID: 214507744}
-  boxCustomer: {fileID: 538638643}
-  boxCustomerUI: {fileID: 594023731}
-  timeWaitSpawn: 5
-  customerPrefabs:
-  - {fileID: -7621972949040468063, guid: 5e7dcf7127ec0ab46818c0b8f24fbee2, type: 3}
-  - {fileID: 5037199283064520035, guid: 69aaa6f6362baed45bf0e8b6b92b9356, type: 3}
-  - {fileID: 3831898050047192986, guid: c9a70a5faa822664bbb7acce4ef5854a, type: 3}
-  - {fileID: 3783816245360077426, guid: 20c821083637e764fba1353cd0f8084a, type: 3}
-  CustomerUIPrefab: {fileID: 383286967850388773, guid: 46ded8644a4269247aa7571384f7e9fe, type: 3}
-  boxItem: {fileID: 593593560}
-  cookItemPrefab: {fileID: 5753301051530765484, guid: bf588dfe489875044b3bad5dd6e06aa6, type: 3}
-  fridgeItemPrefab: {fileID: 766869965449679426, guid: 9f4b921bd578ba543a4052dd69339544, type: 3}
-  washItemPrefab: {fileID: 1939829644352520465, guid: 95d96092184bffe45b9fb68ae3f17c64, type: 3}
-  dirtyPlateItemPrefab: {fileID: 5760283523261437403, guid: 600604efc4ab1764684ad25fd66a74a1, type: 3}
-  dinnerTablePrefab: {fileID: 1625939004915530626, guid: a45e2f53438b05149a1b895e6126008e, type: 3}
-  doorOut: {fileID: 830856303}
+  ListIngredient: []
 --- !u!4 &455757131
 Transform:
   m_ObjectHideFlags: 0
@@ -2715,6 +2696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &515430572
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3952,6 +3934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseInventoryItem: {fileID: 1300019988}
+  inventorySystem:
+    inventorySlots: []
   inventoryHolder: {fileID: 805801378}
   slots:
   - {fileID: 1222526168}
@@ -4046,6 +4030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &829643336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4395,9 +4380,13 @@ MonoBehaviour:
   statusFridgeUI:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   ingredientUI:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  fridgeItem: {fileID: 0}
+  isLoadData: 0
 --- !u!1 &910007730
 GameObject:
   m_ObjectHideFlags: 0
@@ -5679,6 +5668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4153a8b576247d14088a6e1fc0095a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 1
   sensitivity: 0.1
 --- !u!50 &1135656044
 Rigidbody2D:
@@ -6689,9 +6679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemSprite: {fileID: 355184642}
   ItemCount: {fileID: 1629734536}
-  AssignInventorySlot:
-    itemData: {fileID: 0}
-    stackSize: -1
+  AssignInventorySlot: {itemData: {fileID: 0}, stackSize: -1}
 --- !u!114 &1300019989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7133,6 +7121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &1388690608
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7836,6 +7825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &1518842595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8202,6 +8192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseInventoryItem: {fileID: 1300019988}
+  inventorySystem:
+    inventorySlots: []
   inventoryHolder: {fileID: 455757132}
   slots:
   - {fileID: 983028215}
@@ -10309,6 +10301,7 @@ MonoBehaviour:
   statusWashUI:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   plate: {fileID: 11400000, guid: cdf8a9c9e3a0d5c42b89895e3659e1ff, type: 2}
   inventoryHolder: {fileID: 455757132}
   listStains:
@@ -10323,6 +10316,8 @@ MonoBehaviour:
   UIWash: {fileID: 406283232}
   exitBtn: {fileID: 915856943}
   timeDelayClosed: 0.4
+  washItem: {fileID: 0}
+  isClosed: 0
 --- !u!1 &2036750631
 GameObject:
   m_ObjectHideFlags: 0
@@ -10582,6 +10577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   washUI: {fileID: 2008419662}
+  isStain: 0
 --- !u!61 &2043635141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11048,6 +11044,7 @@ MonoBehaviour:
   statusCookUI:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
 --- !u!222 &561548681949373260
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11260,10 +11257,14 @@ MonoBehaviour:
   GetFinishFood:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   gameAreaManager: {fileID: 455757130}
   inventoryHolderSetup: {fileID: 805801378}
   itemSprite: {fileID: 2232743690408611914}
   foodFinish: {fileID: 0}
+  button: {fileID: 0}
+  chef: {fileID: 0}
+  menuFood: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
