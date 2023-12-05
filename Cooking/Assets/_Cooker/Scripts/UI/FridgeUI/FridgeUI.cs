@@ -9,7 +9,7 @@ public class FridgeUI : MonoBehaviour
 {
     [SerializeField] GameAreaManager gameAreaManager;
     public static FridgeUI _instance;
-
+    [SerializeField] TextAreaAttribute textAreaAttribute;
     [SerializeField] GameObject UIBtn;
 
     [SerializeField] GameObject BoxCurrentBtn;
@@ -22,7 +22,9 @@ public class FridgeUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI nameIngredient;
     [SerializeField] TextMeshProUGUI thongtin1;
     [SerializeField] TextMeshProUGUI thongtin2;
-
+    [SerializeField] TextMeshProUGUI notificationText;
+    [SerializeField] float CDmaxFridge;
+    float CDFridge;
 
     public UnityEvent<bool> statusFridgeUI;
     public UnityEvent<Ingredient> ingredientUI;
@@ -30,9 +32,25 @@ public class FridgeUI : MonoBehaviour
     FridgeItem fridgeItem;
 
     bool isLoadData = false;
+    
     private void Start()
     {
         Initialization();
+    }
+    private void Update()
+    {
+        UpdateCD();
+    }
+    void UpdateCD()
+    {
+        if (CDFridge < 0)
+        {
+            CDFridge = 0;
+        }
+        else if (CDFridge > 0)
+        {
+            CDFridge -= Time.deltaTime;
+        }
     }
     void Initialization()
     {
@@ -51,7 +69,8 @@ public class FridgeUI : MonoBehaviour
     {
         UIBtn.SetActive(status);
         gameAreaManager.Chef.SetIsWork(status);
-        if(status && !isLoadData)
+        CleanFridgeUI();
+        if (status && !isLoadData)
         {
             StartCoroutine(LoadFridgeUIWithDelay());
             isLoadData = true;
@@ -76,21 +95,41 @@ public class FridgeUI : MonoBehaviour
 
     void SetDataCurrent(Ingredient ingredient)
     {
+        CleanFridgeUI();
         imgThuHoach.sprite = ingredient.ThuHoachSprite;
         imgThuHoach.color = Color.white;
         imgNguyenLieu.sprite = ingredient.SpriteIngredient;
         imgNguyenLieu.color = Color.white;
         nameIngredient.text = ingredient.NameIngredient;
-        btnGetIngredient.onClick.RemoveAllListeners();
+        thongtin1.text = ingredient.ThongTin1;
+        thongtin2.text = ingredient.ThongTin2;
         btnGetIngredient.onClick.AddListener(() => AddToBag(ingredient, 1));
     }
     void AddToBag(Ingredient ingredient, int sl)
     {
-        gameAreaManager.InventoryHolder.InventorySystem.AddToInventory(ingredient, sl);
+        if(CDFridge != 0)
+        {
+            notificationText.text = "CD còn: " + (int)CDFridge + "s";
+            notificationText.color = Color.blue;
+            return;
+        }
+        bool check = gameAreaManager.InventoryHolder.InventorySystem.AddToInventory(ingredient, sl);
+        if(check)
+        {
+            notificationText.text = "Thêm thành công";
+            notificationText.color = Color.green;
+            CDFridge = CDmaxFridge;
+        }
+        else
+        {
+            notificationText.text = "Túi đồ đã đầy";
+            notificationText.color = Color.red;
+        }
         
     }
     void CleanFridgeUI()
     {
+        btnGetIngredient.onClick.RemoveAllListeners();
         imgThuHoach.sprite = null;
         imgThuHoach.color = Color.clear;
         imgNguyenLieu.sprite = null;
@@ -98,6 +137,7 @@ public class FridgeUI : MonoBehaviour
         nameIngredient.text = "";
         thongtin1.text = "";
         thongtin2.text = "";
-
+        notificationText.text = "";
+        notificationText.color = Color.clear;
     }
 }

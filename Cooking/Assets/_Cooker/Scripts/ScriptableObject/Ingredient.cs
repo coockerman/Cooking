@@ -8,5 +8,6 @@ public class Ingredient : GameScriptableObject
     public Sprite SpriteIngredient;
     public Sprite ThuHoachSprite;
     public int MaxStackSize;
-    
+    public string ThongTin1;
+    public string ThongTin2;
 }

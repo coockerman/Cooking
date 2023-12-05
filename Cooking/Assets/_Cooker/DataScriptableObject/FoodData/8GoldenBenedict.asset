@@ -21,3 +21,11 @@ MonoBehaviour:
   - vitri: 1
     ingredient: {fileID: 11400000, guid: 81116c8f6cf21db4b8814104f277803f, type: 2}
   spriteFood: {fileID: 21300000, guid: 3f7ffaf8a956f18429f914707edd5614, type: 3}
+  KeChuyen: "M\u1ED9t trong nh\u1EEFng m\xF3n t\u1EE7 ph\xE1t minh b\u1EDFi \u0111\u1ED3ng
+    nghi\u1EC7p c\u0169 c\u1EE7a t\xF4i ~ Gomeo Ramsay! \u0110\u01B0\u1EE3c m\u1EC7nh
+    danh l\xE0 N\u1EEF ho\xE0ng c\u1EE7a c\xE1c lo\u1EA1i b\u1EEFa s\xE1ng, m\xF3n
+    \u0103n n\xE0y nh\u01B0 m\u1ED9t vi\xEAn ng\u1ECDc qu\xFD l\u1EA5p l\xE1nh gi\u1EEFa
+    c\xE1c m\xF3n tr\u1EE9ng t\u1EA7m th\u01B0\u1EDDng kh\xE1c v\u1EADy! C\xF9ng
+    v\u1EDBi ch\xFAt b\u1EE5i sao Melk r\u1EAFc \u1EDF b\xEAn tr\xEAn, ch\u1EC9 m\u1ED9t
+    mi\u1EBFng c\u1EAFn th\xF4i v\xE0 l\u1EADp t\u1EE9c b\u1EA1n s\u1EBD \u0111\u1ED5
+    g\u1EE5c! H\u1EE9a \u0111\u1EA5y!"

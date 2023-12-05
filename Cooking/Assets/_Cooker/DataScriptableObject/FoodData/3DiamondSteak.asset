@@ -21,4 +21,8 @@ MonoBehaviour:
   - vitri: 1
     ingredient: {fileID: 11400000, guid: cdf8a9c9e3a0d5c42b89895e3659e1ff, type: 2}
   spriteFood: {fileID: 21300000, guid: 4995e3a79ed0cb442a2c3364924f801d, type: 3}
-  KeChuyen: 
+  KeChuyen: "B\u1EA1n n\xEAn xem l\xFAc ch\xFAng t\xF4i ch\u1EBF bi\u1EBFn n\xF3!
+    Mi\u1EBFng th\u1ECBt ch\xE1y x\xE8o x\xE8o d\u01B0\u1EDBi s\u1EE9c n\xF3ng c\u1EE7a
+    ch\u1EA3o, n\u01B0\u1EDBc th\u1ECBt t\u1EE9a ra l\u1EA5p l\xE1nh nh\u01B0 kim
+    c\u01B0\u01A1ng, v\xE0 m\xF9i th\u01A1m n\u1ED3ng n\xE0n t\u1EEB T\u1ECFi Thi\xEAn
+    Th\u1EA1ch. M\u1ED9t tuy\u1EC7t t\xE1c \u0111\u1EA5y!"

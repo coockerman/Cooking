@@ -21,3 +21,15 @@ MonoBehaviour:
   - vitri: 1
     ingredient: {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
   spriteFood: {fileID: 21300000, guid: 8829dc468c33f484fad5010431322c16, type: 3}
+  KeChuyen: "M\u1ED9t m\xF3n \u0103n ph\u1ED5 bi\u1EBFn c\u1EE7a Nh\u1EADt B\u1EA3n,
+    v\u1EDBi th\u1ECBt c\u1ED1t l\u1EBFt chi\xEAn x\xF9, tr\u1EE9ng, rau v\xE0 gia
+    v\u1ECB. \u0110\u1EEBng v\u1ED9i \u0111\xE1nh gi\xE1 n\xF3 qua v\u1EBB b\u1EC1
+    ngo\xE0i t\u1EA7m th\u01B0\u1EDDng, h\xE3y c\u1EAFn th\u1EED \u0111\u1EC3 c\u1EA3m
+    nh\u1EADn v\u1EBB \u0111\u1EB9p b\xEAn trong ch\xFAng. \u1EA8n sau l\u1EDBp v\u1ECF
+    gi\xF2n tan l\xE0 m\xF9i th\u01A1m \u0111\u1EBFn \u0111\u1ED9 nh\u1EEFng h\xE3ng
+    n\u01B0\u1EDBc hoa cao c\u1EA5p nh\u1EA5t c\u0169ng ph\u1EA3i th\u1EA5y x\u1EA5u
+    h\u1ED5,n\u01B0\u1EDBc th\u1ECBt v\u0103ng ra l\u1EA5p l\xE1nh t\u1EF1a ph\xE1o
+    hoa v\u1EADy. Gi\xE1 h\u01A1i cao sao? \u0110\u1EEBng m\xE0ng \u0111\u1EBFn ch\xFAt
+    b\u1EA1c \u0111\xF3 khi b\u1EA1n \u0111ang \u0111\u01B0\u1EE3c th\u01B0\u1EDFng
+    th\u1EE9c m\u1ED9t t\xE1c ph\u1EA9m ngh\u1EC7 thu\u1EADt h\xE0o nho\xE1ng nh\u01B0
+    th\u1EBF n\xE0y ch\u1EE9! "
