@@ -1,3 +1,4 @@
+using Spine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,7 +20,6 @@ public class Chef : MonoBehaviour
 
     ChefMovement chefMovement;
     ChefUI chefUI;
-
     ChefState chefState;
 
     private void Start()

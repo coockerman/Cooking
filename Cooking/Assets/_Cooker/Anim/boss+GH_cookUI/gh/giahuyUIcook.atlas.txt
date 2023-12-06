@@ -1,0 +1,10 @@
+giahuyUIcook.png
+size:200,92
+filter:Linear,Linear
+pma:true
+art sanji
+bounds:2,2,87,174
+rotate:90
+smoke sanji 2
+bounds:178,69,20,20
+offsets:1,1,22,22

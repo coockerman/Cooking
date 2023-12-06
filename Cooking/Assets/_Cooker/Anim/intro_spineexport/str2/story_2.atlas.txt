@@ -1,0 +1,22 @@
+story_2.png
+size:1880,1208
+filter:Linear,Linear
+pma:true
+stpry2/Khung
+bounds:2,604,960,600
+offsets:1,1,962,602
+stpry2/Layer 3
+bounds:964,688,865,516
+offsets:1,1,867,518
+stpry2/back
+bounds:2,2,960,600
+offsets:1,1,962,602
+stpry2/blue back
+bounds:964,170,865,516
+offsets:1,1,867,518
+stpry2/firework
+bounds:1738,24,138,144
+offsets:1,1,140,146
+stpry2/hand
+bounds:964,7,772,161
+offsets:1,1,774,163

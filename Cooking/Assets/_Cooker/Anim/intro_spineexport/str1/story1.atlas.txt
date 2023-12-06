@@ -1,0 +1,31 @@
+story1.png
+size:2004,1252
+filter:Linear,Linear
+pma:true
+story1/Khung
+bounds:2,31,960,600
+offsets:1,1,962,602
+story1/back
+bounds:1039,650,960,600
+offsets:1,1,962,602
+story1/bacon leaf
+bounds:1633,226,285,213
+rotate:90
+story1/blue back
+bounds:2,633,1035,617
+offsets:1,1,1037,619
+story1/flower
+bounds:1633,2,185,222
+offsets:1,1,187,224
+story1/mountain
+bounds:964,89,542,440
+offsets:1,1,544,442
+rotate:90
+story1/nui
+bounds:1406,513,511,135
+offsets:1,1,513,137
+story1/pine1
+bounds:1848,183,120,328
+offsets:1,1,122,330
+story1/pineee
+bounds:1406,113,225,398

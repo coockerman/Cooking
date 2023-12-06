@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CookItem
   - sponge
+  - nhanvien
   layers:
   - Default
   - TransparentFX
@@ -48,6 +49,9 @@ TagManager:
     locked: 0
   - name: Items
     uniqueID: 3084629575
+    locked: 0
+  - name: HumanIn
+    uniqueID: 4263136539
     locked: 0
   - name: Human
     uniqueID: 1544479625

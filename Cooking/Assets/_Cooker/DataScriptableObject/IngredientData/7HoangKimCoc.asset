@@ -16,3 +16,10 @@ MonoBehaviour:
   SpriteIngredient: {fileID: 21300000, guid: 514234e90b28cf44fb4f28b3e3a0d1ea, type: 3}
   ThuHoachSprite: {fileID: 21300000, guid: db4dcdb3dfdb9ec4ca1e7a8a15876ed2, type: 3}
   MaxStackSize: 3
+  ThongTin1: "lo\u1EA1i g\u1EA1o c\xF3 h\xECnh d\xE1ng thu\xF4n d\xE0i, mang m\xE0u
+    v\xE0ng l\u1EA5p l\xE1nh nh\u01B0 v\xE0ng r\xF2ng, ng\xE0y x\u01B0a ch\u1EC9
+    d\xF9ng \u0111\u1EC3 ti\u1EBFn vua"
+  ThongTin2: "Ch\u1EC9 c\xF3 th\u1EC3 thu ho\u1EA1ch n\xF3 \u1EDF \u0111\u1ED3i g\u1EA1o
+    c\xE1t tr\u1EAFng. Ki\xEAn nh\u1EABn l\u1EE5c t\xECm gi\u1EEFa 100 h\u1EA1t g\u1EA1o
+    th\u01B0\u1EDDng, nh\u1EA5t \u0111\u1ECBnh s\u1EBD c\xF3 m\u1ED9t h\u1EA1t l\xE0
+    ho\xE0ng kim c\u1ED1c ! "

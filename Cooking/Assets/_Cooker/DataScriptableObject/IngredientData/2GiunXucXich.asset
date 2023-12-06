@@ -16,3 +16,11 @@ MonoBehaviour:
   SpriteIngredient: {fileID: 21300000, guid: d8d64a88ed6c9a24588e911647e83d60, type: 3}
   ThuHoachSprite: {fileID: 21300000, guid: f166168a471d57841a65b09827c2dda4, type: 3}
   MaxStackSize: 3
+  ThongTin1: "M\u1ED9t lo\xE0i giun sinh s\u1ED1ng t\u1EA1i khu v\u1EF1c \u0111\u1EA5t
+    \u1EA9m c\u1EE7a x\u1EE9 Wales.T\xEDnh c\xE1ch th\xE2n thi\u1EC7n v\xE0 hi\u1EC1n
+    h\xF2a, nhi\u1EC1u dinh d\u01B0\u1EE1ng, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c
+    \u01B0u ti\xEAn ch\u1ECDn l\xE0m b\u1EEFa s\xE1ng. "
+  ThongTin2: "D\u0129 nhi\xEAn b\u1EA1n c\xF3 th\u1EC3 nu\xF4i ch\xFAng ch\u1EE9!
+    Tu\u1ED5i th\u1ECD c\u1EE7a ch\xFAng l\xEAn t\u1EDBi 4 5 n\u0103m, con giun tr\u01B0\u1EDFng
+    th\xE0nh d\xE0i nh\u1EA5t t\u1EEBng \u0111\u01B0\u1EE3c ghi nh\u1EADn c\xF3 \u0111\u1ED9
+    d\xE0i l\xEAn t\u1EDBi 1,5m \u0111\u1EA5y "

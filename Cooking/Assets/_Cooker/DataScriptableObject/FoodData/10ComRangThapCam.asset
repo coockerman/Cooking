@@ -21,3 +21,13 @@ MonoBehaviour:
   - vitri: 1
     ingredient: {fileID: 11400000, guid: 82c63d444b6c01445a04fd033dac2405, type: 2}
   spriteFood: {fileID: 21300000, guid: f189bdc1b2bc12c4888872a7a245db10, type: 3}
+  KeChuyen: "M\u1ED9t m\xF3n \u0103n v\u1EDBi b\u1EC1 d\xE0y l\u1ECBch s\u1EED \u0111\xE3
+    ng\xF3t ngh\xE9t 300 n\u0103m r\u1ED3i \u0111\u1EA5y! Kh\xE1c v\u1EDBi nh\u1EEFng
+    d\u0129a c\u01A1m nh\u1EA1t nh\u1EBDo v\xF4 v\u1ECB c\u1EE7a c\xE1c nh\xE0 h\xE0ng
+    kh\xE1c, \u1EDF Miracle Restaurant, b\u1EA1n s\u1EBD \u0111\u01B0\u1EE3c c\u1EA3m
+    nh\u1EADn v\u1ECB b\xF9i th\u01A1m c\u1EE7a ho\xE0ng kim c\u1ED1c, b\xE9o ng\u1EADy
+    c\u1EE7a th\u1EADp \u1EE9c \u0111i\u1EC3u, h\u01B0\u01A1ng th\u01A1m ng\u1ECDt
+    ng\xE0o c\u1EE7a h\xE0nh x\u1EE9 Wales. C\xF2n g\xEC h\u01A1n m\u1ED9t d\u0129a
+    c\u01A1m rang n\xF3ng h\u1ED5i gi\u1EEFa chi\u1EC1u \u0111\xF4ng m\u01B0a ph\xF9n,
+    ng\u1ED3i ng\u1EAFm nh\u01B0ng ng\u01B0\u1EDDi \u0111i l\xE0m v\u1EC1 l\u1EA1nh
+    l\u1EBDo ch\u1EDD \u0111\xE8n \u0111\u1ECF nh\u1EC9"

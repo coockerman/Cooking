@@ -16,3 +16,13 @@ MonoBehaviour:
   SpriteIngredient: {fileID: 21300000, guid: ed2b8242ac62e09418c28d4b31a3d790, type: 3}
   ThuHoachSprite: {fileID: 21300000, guid: 14d2ada5488e14f4893ef6c4039b2464, type: 3}
   MaxStackSize: 3
+  ThongTin1: "M\u1ED9t nguy\xEAn li\u1EC7u qu\xFD b\xE1u c\u1EE7a Th\u1EF1c L\xE2m
+    T\u1EF1, th\u01B0\u1EDDng \u0111\u01B0\u1EE3c c\xE1c h\xF2a th\u01B0\u1EE3ng
+    trong ch\xF9a d\xF9ng \u0111\u1EC3 t\u1EADp luy\u1EC7n t\xEDnh ki\xEAn nh\u1EABn.
+    Ch\u1EC9 khi trong l\xF2ng tr\xE0n ng\u1EADp l\xF2ng bi\u1EBFt \u01A1n v\u1EDBi
+    \u1EA9m th\u1EF1c th\xEC \u0111\xF3a hoa m\u1EDBi n\u1EDF ra"
+  ThongTin2: "L\xE0 m\u1ED9t lo\u1EA1i nguy\xEAn li\u1EC7u kh\xF3 thu ho\u1EA1ch,
+    l\xF2ng b\u1EA1n c\xE0ng th\xE0nh t\xE2m bao nhi\xEAu, \u0111\xF3a hoa s\u1EBD
+    n\u1EDF nhi\u1EC1u b\u1EA5y nhi\xEAu. C\xE1nh hoa l\xE0 nh\u1EEFng l\xE1t th\u1ECBt
+    x\xF4ng kh\xF3i th\u01A1m ngon, ch\xFAng s\u1EBD m\u1ECDc l\u1EA1i 10 ng\xE0y
+    sau khi ng\u1EAFt"

@@ -76,6 +76,7 @@ public class InventorySlot_UIFinish : MonoBehaviour
     }
     public void OnUISlotClick()
     {
+        if (chef.FoodBring != null) return;
         bool isDelete = inventoryHolderSetup.InventorySystem.DeleteItemSlot(foodFinish);
         if(isDelete)
         {

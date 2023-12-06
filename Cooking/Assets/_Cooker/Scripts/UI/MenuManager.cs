@@ -12,9 +12,15 @@ public class MenuManager : MonoBehaviour
     public TextMeshProUGUI textMeshPro;
     public void StartGame()
     {
+        SceneManager.LoadScene(2);
+    }
+
+    public void StartGameHaveUI()
+    {
         UiLoad.SetActive(true);
         StartCoroutine(LoadAsynchronously(1));
     }
+    
     IEnumerator LoadAsynchronously(int sceneIndex)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);

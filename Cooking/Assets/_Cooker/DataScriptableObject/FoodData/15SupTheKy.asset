@@ -35,3 +35,12 @@ MonoBehaviour:
   - vitri: 8
     ingredient: {fileID: 11400000, guid: 9d26a23e3cc244148ba3c6456bd9dec6, type: 2}
   spriteFood: {fileID: 21300000, guid: ef46fa6cdb300a14aba540f05db9a8e6, type: 3}
+  KeChuyen: "L\xE0 t\u1ED5ng h\u1EE3p c\u1EE7a t\u1EA5t c\u1EA3 nh\u1EEFng g\xEC
+    tinh t\xFAy nh\u1EA5t c\u1EE7a c\xE1c nguy\xEAn li\u1EC7u tr\xEAn \u0111\u1EDDi.
+    Nh\u1EEFng nguy\xEAn li\u1EC7u t\u1EED th\u1EDDi c\u1ED5 \u0111\u1EA1i b\u1ECB
+    \u0111\xF3ng b\u0103ng \u1EDF B\u1EAFc c\u1EF1c, c\u1EE9 m\u1ED7i m\u1ED9t tr\u0103m
+    n\u0103m tinh hoa ng\u01B0ng t\u1EE5 l\u1EA1i m\u1EDBi ch\u1EA3y ra m\u1ED9t
+    gi\u1ECDt. S\xFAp c\xF3 m\xE0u xanh tinh khi\u1EBFt c\xF9ng l\xE0n c\u1EF1c quang
+    tuy\u1EC7t \u0111\u1EB9p bao quanh. Ghi ch\xE9p ghi l\u1EA1i r\u1EB1ng b\u1EA5t
+    k\u1EC3 ai u\u1ED1ng th\u1EED n\xF3 g\u01B0\u01A1ng m\u1EB7t \u0111\u1EC1u n\u1EDF
+    ra m\u1ED9t n\u1EE5 c\u01B0\u1EDDi v\xF4 c\xF9ng m\xE3n nguy\u1EC7n."
