@@ -1,0 +1,24 @@
+story_3.png
+size:2000,1568
+filter:Linear,Linear
+pma:true
+story3/Layer 3
+bounds:1128,1037,867,527
+offsets:1,1,869,529
+story3/back
+bounds:1128,519,865,516
+offsets:1,1,867,518
+story3/backw
+bounds:2,604,960,600
+offsets:1,1,962,602
+rotate:90
+story3/blink
+bounds:964,68,581,449
+offsets:1,1,583,451
+story3/khung
+bounds:2,2,960,600
+offsets:1,1,962,602
+story3/meat
+bounds:604,692,872,522
+offsets:1,1,874,524
+rotate:90

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,7 +10,7 @@ public class FridgeUI : MonoBehaviour
 {
     [SerializeField] GameAreaManager gameAreaManager;
     public static FridgeUI _instance;
-    [SerializeField] TextAreaAttribute textAreaAttribute;
+    
     [SerializeField] GameObject UIBtn;
 
     [SerializeField] GameObject BoxCurrentBtn;
