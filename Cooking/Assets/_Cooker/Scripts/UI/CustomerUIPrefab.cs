@@ -34,7 +34,6 @@ public class CustomerUIPrefab : MonoBehaviour
     }
     public void ChangeStatusEat()
     {
-        Debug.Log("change");
         WaitingUI.gameObject.SetActive(false);
         EatingUI.gameObject.SetActive(true);
     }

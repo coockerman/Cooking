@@ -43,7 +43,6 @@ public class DinnerTable : MonoBehaviour
             int randomIndex = Random.Range(0, listTablesEmpty.Count);
             Table randomEmptyTable = listTablesEmpty[randomIndex];
 
-            // Gán khách hàng cho bàn
             randomEmptyTable.Customer = customer;
 
             return randomEmptyTable;
@@ -57,7 +56,6 @@ public class DinnerTable : MonoBehaviour
         {
             if (table.Customer == customer)
             {
-                // Đưa khách hàng ra khỏi bàn
                 table.Customer = null;
 
                 return table;

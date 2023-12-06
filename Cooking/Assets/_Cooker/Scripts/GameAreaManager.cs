@@ -173,7 +173,6 @@ public class GameAreaManager : MonoBehaviour
                 GameObject customerObject = Instantiate(randomCustomerPrefab.gameObject, boxCustomer.transform);
                 GameObject customerUIObject = Instantiate(CustomerUIPrefab, boxCustomerUI.transform);
 
-                // Lấy component Customer từ GameObject
                 Customer customerComponent = customerObject.GetComponent<Customer>();
                 CustomerUIPrefab customerUI = customerUIObject.GetComponent<CustomerUIPrefab>();
                 customerComponent.gameAreaManager = this;
@@ -181,12 +180,11 @@ public class GameAreaManager : MonoBehaviour
 
                 customerUI.SetCustomerHover(customerComponent);
 
-                // Thêm khách hàng vào danh sách
                 spawnedCustomers.Add(customerComponent);
             }
             else
             {
-                yield return null; // Cho đến khi được gọi lại để tiếp tục spawn
+                yield return null;
             }
 
             yield return new WaitForSeconds(timeWaitSpawn);
@@ -199,7 +197,6 @@ public class GameAreaManager : MonoBehaviour
         return customerPrefabs[randomIndex];
     }
 
-    // Phương thức để xoá khách hàng khỏi danh sách khi rời đi
     public void RemoveCustomer(Customer customer)
     {
         spawnedCustomers.Remove(customer);
@@ -208,58 +205,4 @@ public class GameAreaManager : MonoBehaviour
 
 }
 
-//class GameAreaManagerActor : ReceiveActor
-//{
-//    private readonly int _maxWaitingTime = 3;
-//    private int dayNow = 0;
-//    private bool _isGameStarted;
-//    private IActorRef _chefCooker = Context.ActorOf(ChefCookerActor.Props(), "ChefCookerActor");
-//    private IActorRef _dishWasher = Context.ActorOf(DishWasherActor.Props(), "DishWasherActor");
-//    private IActorRef _chefPrepare = Context.ActorOf(ChefPrepareActor.Props(), "ChefPrepareActor");
-//    private IActorRef _customer = Context.ActorOf(CustomerActor.Props(), "CustomerActor");
 
-//    public static Props Props()
-//    {
-//        return Akka.Actor.Props.Create(() => new GameAreaManagerActor());
-//    }
-
-//    public GameAreaManagerActor()
-//    {
-//        Receive<GameAction>(message =>
-//        {
-//            switch (message)
-//            {
-//                case InitializeGame action:
-                    
-//                    if (!_isGameStarted)
-//                    {
-//                        _isGameStarted = true;
-//                        action.GameManager.OnInitializeGame(action.InitData);
-//                    }
-//                    else
-//                    {
-//                        var failData = new InitializeGameData(0, 0, 0, 0, 0, false);
-//                        action.GameManager.OnInitializeGame(failData);
-//                    }
-//                    break;
-
-//                case OpenRestaurant openRes:
-//                    var todayMenu = openRes.MenuByDay;
-//                    var selectedFoodFromMenu = new List<Task> { _customer.Ask(new SelectSomeFoods(todayMenu, dayNow), TimeSpan.FromSeconds(_maxWaitingTime)) };
-//                    Task.WhenAll(selectedFoodFromMenu).PipeTo(_chefCooker, Self);
-//                    break;
-                
-//                  case PrepareIngredients prepareIngredients:
-//                    //TODO: 
-//                      break;
-                
-//                case SwitchToAutoMode _:
-//                    break;
-
-//                case SwitchToManualMode _:
-//                    break;
-//            }
-//        });
-//    }
-    
-//}
