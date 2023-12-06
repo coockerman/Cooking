@@ -37,11 +37,8 @@ public class HuongDanManager : MonoBehaviour
             }else
             {
                 char currentChar = textToPrint[i];
-
-                // Cập nhật nội dung của TextMeshProUGUI
                 textMeshProUGUI.text += currentChar;
             }
-            // Đợi một khoảng thời gian trước khi in ký tự tiếp theo
             yield return new WaitForSeconds(printSpeed);
         }
         yield return new WaitForSeconds(1f);

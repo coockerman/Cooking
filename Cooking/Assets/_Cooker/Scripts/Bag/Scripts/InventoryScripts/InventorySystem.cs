@@ -78,7 +78,6 @@ public class InventorySystem
             foreach (ViTriIngredient inventorySlot in ingredientInFood)
             {
                 int vitri = inventorySlot.vitri;
-                //if (vitri > inventorySlots.Count) return null;
                 if (inventorySlot.ingredient != inventorySlots[vitri].ItemData) isTrueCongThuc = false;
             }
             if (isTrueCongThuc) return item;
