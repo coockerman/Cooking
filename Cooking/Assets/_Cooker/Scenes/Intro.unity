@@ -624,7 +624,7 @@ MonoBehaviour:
   skeletonAnimation2: {fileID: 1324506402}
   skeletonAnimation3: {fileID: 1077412981}
   timeDelayIntro: 7
-  timeDelayIdle: 3
+  timeDelayIdle: 3.5
 --- !u!4 &1386129382
 Transform:
   m_ObjectHideFlags: 0

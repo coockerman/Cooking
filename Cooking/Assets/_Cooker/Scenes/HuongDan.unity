@@ -177,9 +177,10 @@ MonoBehaviour:
   gameObjectNext: {fileID: 176077670}
   clickButton: {fileID: 2088991959}
   textMeshProUGUI: {fileID: 281490178}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CThu ho\u1EA1ch xong th\xEC ta s\u1EBD b\u1EAFt \u0111\u1EA7u
+    n\u1EA5u n\u01B0\u1EDBng\u201D \u201CC\xF9ng t\u1EA1o ra \u0111i\u1EC1u di\u1EC7u
+    k\u1EF3 n\xE0o!!\u201D"
+  printSpeed: 0.02
 --- !u!1 &111883780
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,9 +729,12 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1879836118}
   clickButton: {fileID: 1279486956}
   textMeshProUGUI: {fileID: 1552140200}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "pun pun : \u201CCho m\u1ED9t m\u1EA7m \u0111\xE1\u201D boss :\u201D
+    Hohoho, nh\u1EEFng m\xF3n \u0111\u1EB7c bi\u1EC7t th\u1EBF n\xE0y l\xE0m sao
+    t\u1EE5i n\xF3 bi\u1EBFt l\xE0m \u0111\u01B0\u1EE3c ch\u1EE9\u201D \u201CT\u1EDDi
+    l\xFAc cho t\u1EE5i n\xF3 xem t\xE0i n\u0103ng c\u1EE7a m\u1ED9t \u0111\u1EA7u
+    b\u1EBFp 30 n\u0103m kinh nghi\u1EC7m n\xE0o\u201D"
+  printSpeed: 0.02
 --- !u!1 &176077670
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,9 +789,11 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1106703169}
   clickButton: {fileID: 111883782}
   textMeshProUGUI: {fileID: 1142345204}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CDo th\u1EDDi gian l\xE0m g\xEAm c\xF3 h\u1EA1n n\xEAn t\u1EA1m
+    th\u1EDDi c\u1EE9 gh\xE9p n\xF3 nh\u01B0 b\xE0n ch\u1EBF t\u1EA1o th\u1EBF n\xE0y
+    l\xE0 ra m\xF3n nh\xE9 :))\u201D \u201CGi\u1ED1ng nh\u01B0 l\xE0 ch\u01A1i Minecraft
+    th\xF4i m\xE0\u201D "
+  printSpeed: 0.02
 --- !u!1 &258378958
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,7 +971,7 @@ MonoBehaviour:
   textToPrint: "\u201CCh\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi Miracle Restaurant,
     t\xEAn t\xF4i l\xE0 Ducy C\xF9ng nhau \u0111i d\u1EA1o m\u1ED9t ch\xFAt nh\xE9
     ?\u201D "
-  printSpeed: 0.1
+  printSpeed: 0.02
 --- !u!1 &281490176
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,9 +2117,11 @@ MonoBehaviour:
   gameObjectNext: {fileID: 171789864}
   clickButton: {fileID: 1576433856}
   textMeshProUGUI: {fileID: 529152595}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CNgo\xE0i nh\u1EEFng v\u1ECB kh\xE1ch b\xECnh th\u01B0\u1EDDng
+    ra, lu\xF4n c\xF3 v\xE0i v\u1ECB \u201Cth\u01B0\u1EE3ng \u0111\u1EBF\u201D h\u01A1i
+    \u0111\u1EB7c bi\u1EC7t x\xEDu\u201D 2 con kh\xE1ch kia n\xF3i \u201Ccho 1 th\u1ECBt
+    nha\u201D \u201Ccho 1 tr\u1EE9ng\u201D "
+  printSpeed: 0.02
 --- !u!1 &501616750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,7 +2871,7 @@ MonoBehaviour:
     sao l\u1EA1i ch\u1EC9 c\xF3 t\u01B0ng \u0111\xE2y m\xF3n?\u201D \u0111\xFAng
     kh\xF4ng \xE0 \u1EEB th\xEC.. v\xEC l\u0169 ng\u1ED1c h\u1ECDc vi\u1EC7c c\u1EE7a
     ta m\u1EDBi ch\u1EC9 bi\u1EBFt l\xE0m b\u1EB1ng n\xE0y th\xF4i ch\u1EE9 sao\u201D "
-  printSpeed: 0.1
+  printSpeed: 0.02
 --- !u!1 &616123749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,9 +2926,10 @@ MonoBehaviour:
   gameObjectNext: {fileID: 750742289}
   clickButton: {fileID: 1840830863}
   textMeshProUGUI: {fileID: 929561955}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201C\u0110\xE2y l\xE0 c\xE1c nguy\xEAn li\u1EC7u c\u1EA7n thi\u1EBFt
+    \u0111\u1EC3 l\xE0m ra m\xF3n M\u1EA7m \u0111\xE1 Gi\u1EDD th\xEC c\xF9ng thu
+    ho\u1EA1ch n\xF3 nh\xE1\u201D "
+  printSpeed: 0.02
 --- !u!1 &621820196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,7 +2986,7 @@ MonoBehaviour:
   textMeshProUGUI: {fileID: 312510306}
   textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
     h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  printSpeed: 0.02
 --- !u!1 &682478816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,9 +3311,8 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1347089906}
   clickButton: {fileID: 139010556}
   textMeshProUGUI: {fileID: 1243747577}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CM\u1EDF t\u1EE7 l\u1EA1nh ra \u0111\u1EC3 thu ho\u1EA1ch\u201D "
+  printSpeed: 0.02
 --- !u!1 &851875487
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,9 +3501,11 @@ MonoBehaviour:
   gameObjectNext: {fileID: 957511783}
   clickButton: {fileID: 1215218499}
   textMeshProUGUI: {fileID: 1088388801}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201C\xC0 v\u1EC1 b\u1ECDn ch\xFAng h\u1EA3, xin gi\u1EDBi thi\u1EC7u
+    3 \u0111\u1EE9a ch\xE1u c\u1EE7a ta, T\xE2m, T\xE8o v\xE0 Gia Huy.\u201D \u201CCh\xFAng
+    s\u1EBD ph\u1EE5 gi\xFAp ta v\u1EDBi vai tr\xF2 l\xE0 nh\xE2n vi\xEAn nh\xE0
+    h\xE0ng trong m\xF9a h\xE8 n\xE0y\u201D"
+  printSpeed: 0.02
 --- !u!1 &929561953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,9 +3694,9 @@ MonoBehaviour:
   gameObjectNext: {fileID: 463282656}
   clickButton: {fileID: 1967163815}
   textMeshProUGUI: {fileID: 1003908592}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201C\xC0 c\xF2n ta th\xEC l\xE0m g\xEC h\u1EA3\u201D \u201CHohoho,
+    l\xE0 cho nh\u1EEFng l\xFAc nh\u01B0 th\u1EBF n\xE0y \u0111\xE2y\u201D "
+  printSpeed: 0.02
 --- !u!1 &1003908590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4152,9 +4162,11 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1318595065}
   clickButton: {fileID: 2057811886}
   textMeshProUGUI: {fileID: 396016809}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CGomeo Ramsay \u0111\xE3 t\u1EEBng n\xF3i: \u201CN\u1EBFu nh\u01B0
+    b\u1EA1n l\xE0m vi\u1EC7c trong m\u1ED9t \u0111\u1ED1ng r\xE1c, b\u1EA1n s\u1EBD
+    t\u1EA1o ra m\u1ED9t \u0111\u1ED1ng r\xE1c\u201D\u201D \u201CB\u1EA5m v\xE0o
+    b\u1ED3n r\u1EEDa \u0111\u1EC3 r\u1EEDa b\xE1t n\xE0o\u201D"
+  printSpeed: 0.02
 --- !u!1 &1142345202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4345,7 +4357,7 @@ MonoBehaviour:
   textMeshProUGUI: {fileID: 851875489}
   textToPrint: "\u201CY\xEAn t\xE2m \u0111i, r\u1ED3i ch\xFAng s\u1EBD gi\u1ECFi
     l\xEAn t\u1EEBng ng\xE0y th\xF4i\u201D"
-  printSpeed: 0.1
+  printSpeed: 0.02
 --- !u!1 &1174637751
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,9 +5115,9 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1958431575}
   clickButton: {fileID: 1852525596}
   textMeshProUGUI: {fileID: 1831865357}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CCh\u1EAFc \u0111o\u1EA1n r\u1EEDa b\xE1t th\xEC kh\xF4ng c\u1EA7n
+    ph\u1EA3i h\u01B0\u1EDBng d\u1EABn n\u1EEFa \u0111\xE2u ha\u201D "
+  printSpeed: 0.02
 --- !u!1 &1320082572
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,9 +5247,11 @@ MonoBehaviour:
   gameObjectNext: {fileID: 49616091}
   clickButton: {fileID: 1702339974}
   textMeshProUGUI: {fileID: 1283577115}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201DNh\xECn kh\u1ED1i th\u1ECBt kim c\u01B0\u01A1ng tuy\u1EC7t
+    \u0111\u1EB9p n\xE0y xem! \u201C \u201C\xD4i nh\u1EEFng nguy\xEAn li\u1EC7u m\u1EF9
+    mi\u1EC1u v\xE0 di\u1EC7u k\u1EF3 !!\u201D \u201C \u0110\xE2y ch\xEDnh l\xE0
+    l\xFD do ta tr\u1EDF th\xE0nh \u0111\u1EA7u b\u1EBFp \u0111\u1EA5y\u201D "
+  printSpeed: 0.02
 --- !u!1 &1347491078
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,9 +5306,11 @@ MonoBehaviour:
   gameObjectNext: {fileID: 616123749}
   clickButton: {fileID: 258378960}
   textMeshProUGUI: {fileID: 132310200}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CM\u1EA7m \u0111\xE1 l\xE0 t\xEAn g\u1ECDi kh\xE1c c\u1EE7a
+    m\xF3n th\u1ECBt \u0111\xE1 qu\xFD. Ch\u1EC9 nh\u1EEFng ng\u01B0\u1EDDi s\xE0nh
+    \u0103n m\u1EDBi bi\u1EBFt \u0111\u1EBFn bi\u1EC7t danh c\u1EE7a m\xF3n \u0103n
+    sang tr\u1ECDng n\xE0y th\xF4i hoho\u201D"
+  printSpeed: 0.02
 --- !u!1 &1378653463
 GameObject:
   m_ObjectHideFlags: 0
@@ -6577,7 +6593,7 @@ MonoBehaviour:
   clickButton: {fileID: 533339029}
   textMeshProUGUI: {fileID: 1940451727}
   textToPrint: "\u201CB\u1EA5m v\xE0o menu \u0111\u1EC3 xem c\xE1c m\xF3n \u0103n\u201D "
-  printSpeed: 0.1
+  printSpeed: 0.02
 --- !u!1 &1879836118
 GameObject:
   m_ObjectHideFlags: 0
@@ -6632,9 +6648,9 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1347491078}
   clickButton: {fileID: 1810559808}
   textMeshProUGUI: {fileID: 2076011939}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CT\xECm c\xF4ng th\u1EE9c \u201CM\u1EA7m \u0111\xE1\u201D \u1EDF
+    trong menu nh\xE9\u201D "
+  printSpeed: 0.02
 --- !u!1 &1890207519
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,9 +6705,10 @@ MonoBehaviour:
   gameObjectNext: {fileID: 0}
   clickButton: {fileID: 1174637753}
   textMeshProUGUI: {fileID: 1474103500}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CPh\u1EA7n c\xF2n l\u1EA1i \u0111\u1EC3 d\xE0nh cho b\u1EA1n
+    kh\xE1m ph\xE1 nh\xE9!\u201D \u201CGi\u1EDD th\xEC c\xF9ng t\u1EA1o ra ph\xE9p
+    m\xE0u n\xE0o\u201D"
+  printSpeed: 0.02
 --- !u!1 &1899387264
 GameObject:
   m_ObjectHideFlags: 0
@@ -7284,9 +7301,9 @@ MonoBehaviour:
   gameObjectNext: {fileID: 1890207519}
   clickButton: {fileID: 714480523}
   textMeshProUGUI: {fileID: 355654987}
-  textToPrint: "\u201C\u0110\xE2y l\xE0 nh\u1EEFng m\xF3n hi\u1EC7n t\u1EA1i nh\xE0
-    h\xE0ng c\xF3 th\u1EC3 ph\u1EE5c v\u1EE5\u201D"
-  printSpeed: 0.1
+  textToPrint: "\u201CV\xE0 \u0111\xF3, c\u01A1 b\u1EA3n nhi\u1EC7m v\u1EE5 c\u1EE7a
+    b\u1EA1n ch\u1EC9 c\xF3 v\u1EADy\u201D"
+  printSpeed: 0.02
 --- !u!1 &1967163813
 GameObject:
   m_ObjectHideFlags: 0

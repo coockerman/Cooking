@@ -67,7 +67,7 @@ public class IntroManager : MonoBehaviour
 
         yield return new WaitForSeconds(timeDelayIntro);
 
-        skeletonAnimation3.gameObject.SetActive(false);
+        //skeletonAnimation3.gameObject.SetActive(false);
         NextScene();
     }
     void NextScene()
