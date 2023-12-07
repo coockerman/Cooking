@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class CookItem : MonoBehaviour
 {
-    [SerializeField] Food foodFinish;
-    
-    public Food GetDishFinish()
-    {
-        return foodFinish;
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         

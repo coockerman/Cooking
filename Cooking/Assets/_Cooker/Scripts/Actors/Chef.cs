@@ -64,7 +64,7 @@ public class Chef : MonoBehaviour
     }
     public bool BringFood(Food food)
     {
-        if(foodBring == null)
+        if(foodBring == null && food != null)
         {
             foodBring = food;
             chefUI.SetStatusBoxImg(foodBring);
@@ -75,6 +75,7 @@ public class Chef : MonoBehaviour
 
     public Food ServeFood()
     {
+        if (foodBring == null) return null;
         Food food = foodBring;
         foodBring = null;
         chefUI.SetStatusBoxImg(foodBring);
@@ -91,14 +92,5 @@ public class Chef : MonoBehaviour
             chefState = ChefState.rest;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "CookItem")
-        {
-            if (chefState != ChefState.rest) return;
-            foodBring = collision.GetComponent<CookItem>().GetDishFinish();
-            //chefState = ChefState.bringFood;
-        }
-
-    }
+    
 }

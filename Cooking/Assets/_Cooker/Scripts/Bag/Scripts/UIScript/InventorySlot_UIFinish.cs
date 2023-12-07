@@ -35,10 +35,6 @@ public class InventorySlot_UIFinish : MonoBehaviour
         chef = gameAreaManager.Chef;
         menuFood = gameAreaManager.MenuByDay;
     }
-    public void Init(Food slot)
-    {
-        UpdateUISlot(slot);
-    }
     public void UpdateUISlot(Food slot)
     {
         if (slot != null)
@@ -50,7 +46,6 @@ public class InventorySlot_UIFinish : MonoBehaviour
         {
             ClearSlot();
         }
-
     }
     
     public void ClearSlot()
@@ -76,19 +71,11 @@ public class InventorySlot_UIFinish : MonoBehaviour
     }
     public void OnUISlotClick()
     {
-        if (chef.FoodBring != null) return;
-        bool isDelete = inventoryHolderSetup.InventorySystem.DeleteItemSlot(foodFinish);
-        if(isDelete)
+        if (chef.BringFood(foodFinish))
         {
-            if(chef.BringFood(foodFinish))
-            {
-                GetFinishFood?.Invoke();
-                ClearSlot();
-            }
-        }
-        else
-        {
-
+            inventoryHolderSetup.InventorySystem.DeleteItemSlot(foodFinish);
+            GetFinishFood?.Invoke();
+            ClearSlot();
         }
     }
 }

@@ -61,6 +61,7 @@ public class ChefMovement : MonoBehaviour
         isWalk = false;
         if (moveHorizontal > 0.5f || moveHorizontal < -0.5f || moveVertical > 0.5f || moveVertical < -0.5f)
         {
+            if (moveHorizontal > 0.5f || moveHorizontal < -0.5f) moveVertical = 0;
             isWalk = true;
             lastMove = new Vector2(moveHorizontal, moveVertical);
         }

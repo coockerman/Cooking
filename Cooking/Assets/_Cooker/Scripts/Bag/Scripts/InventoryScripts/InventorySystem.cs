@@ -70,6 +70,7 @@ public class InventorySystem
     }
     public Food CheckFood(Menu menuFood)
     {
+        if (menuFood.Foods == null) return null;
         List<Food> foodInMenu = menuFood.Foods;
         foreach(Food item in foodInMenu)
         {

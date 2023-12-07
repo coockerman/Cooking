@@ -163,7 +163,6 @@ public abstract class Customer : MonoBehaviour
             if (customerState == CustomerState.WaitingFood)
             {
                 foodGet = collision.gameObject.GetComponent<Chef>().ServeFood();
-                Debug.Log("da nhan food: " + foodGet?.NameFood);
             }
         }
         if(foodGet != null)
